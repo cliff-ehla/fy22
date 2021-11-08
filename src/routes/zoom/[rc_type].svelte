@@ -1,6 +1,6 @@
 <script context="module">
-	export const load = async ({fetch}) => {
-		const res = await fetch('/zoom.json')
+	export const load = async ({fetch, page}) => {
+		const res = await fetch(`/zoom/list_zoom_tutor.json?rc_type=${page.params.rc_type}`)
 		const json = await res.json()
 		if (res.ok) {
 			return {
