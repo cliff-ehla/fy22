@@ -1,12 +1,17 @@
 <script context="module">
 	export const load = async ({fetch}) => {
 		const res = await fetch('/zoom.json')
-		const body = await res.json()
-		return {
-			props: {
-				teacher_list: body.teacher_list
+		const json = await res.json()
+		if (res.ok) {
+			return {
+				props: {
+					teacher_list: json.data
+				}
 			}
 		}
+		return {
+			error: new Error(JSON.stringify(json.debug))
+		};
 	}
 </script>
 
