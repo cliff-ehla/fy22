@@ -1,5 +1,6 @@
 <script context="module">
 	export const load = async ({fetch, page}) => {
+		console.log(page.params)
 		const res = await fetch(`/zoom/list_zoom_tutor.json?rc_type=${page.params.rc_type}`)
 		const json = await res.json()
 
@@ -45,6 +46,8 @@
 <b>Classroom</b>
 {#if classroom && classroom.length}
 	{#each classroom as c}
-		<p>{c.name}</p>
+		<p>
+			<a href="/zoom/{c.rc_type}-{c.tutor_group_id}">{c.name}</a>
+		</p>
 	{/each}
 {/if}
