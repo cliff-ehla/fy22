@@ -2,22 +2,23 @@
 	import {page} from '$app/stores'
 	import { _ } from 'svelte-i18n'
 	import LocaleSwitch from './locale-switch.svelte'
-	let nav_items = [
+	import {locale} from 'svelte-i18n'
+	$: nav_items = [
 		{
 			label: 'zoom.small_class',
-			href: '/zoom/small?tag=all'
+			href: `/${$locale}/zoom/small?tag=all`
 		},
 		{
 			label: 'zoom.big_class',
-			href: '/zoom/big?tag=all'
+			href: `/${$locale}/zoom/big?tag=all`
 		},
 		{
 			label: 'zoom.one_on_one',
-			href: '/zoom/one-on-one'
+			href: `/${$locale}/zoom/one-on-one`
 		},
 		{
 			label: 'en',
-			href: '/en/powerful-solution'
+			href: `/en/powerful-solution`
 		},
 		{
 			label: 'hk',

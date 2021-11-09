@@ -2,7 +2,7 @@
 	export const prerender = true;
 
 	export const load = async ({fetch}) => {
-		const res = await fetch('/zoom/one_on_one_advertisement_list.json')
+		const res = await fetch('/api/one_on_one_advertisement_list.json')
 		const json = await res.json()
 		return {
 			props: {

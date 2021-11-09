@@ -15,8 +15,9 @@
 	]
 
 	const onSwitch = key => {
-		console.log($page.path, $page)
 		locale.set(key)
+		const new_path = `/${key}` + $page.path.substring(3)
+		goto(new_path)
 	}
 </script>
 

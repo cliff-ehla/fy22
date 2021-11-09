@@ -3,7 +3,7 @@
 		const body = {
 			tutor_group_id: page.params.tutor_group_id
 		}
-		const res = await fetch('/zoom/registrable_classroom_by_tutor_group_id.json', {
+		const res = await fetch('/api/registrable_classroom_by_tutor_group_id.json', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -14,7 +14,7 @@
 		if (res.ok) {
 			const json = await res.json()
 
-			const res2 = await fetch(`/zoom/zoom_tutor_by_id.json?tutor_id=${json.data.tutor_id}`)
+			const res2 = await fetch(`/api/zoom_tutor_by_id.json?tutor_id=${json.data.tutor_id}`)
 			const json2 = await res2.json()
 
 			return {
