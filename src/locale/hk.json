@@ -1,3 +1,13 @@
 {
-  "page_title": "超效學習配套功能"
+  "page_title": "超效學習配套功能",
+  "zoom": {
+    "title": "EHLA網上課堂",
+    "small_class": "小班課",
+    "big_class": "大班課",
+    "one_on_one": "一對一",
+    "tag": {
+      "All": "全部",
+      "happy": "測試"
+    }
+  }
 }
