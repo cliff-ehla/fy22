@@ -25,10 +25,12 @@
 		<video class="max-w-full max-w-xl" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/story-telling.mp4"></video>
 	</div>
 
-	<div class="my-4">
-		<h2>重要課後溫習鞏固環節</h2>
-		<p>極為獨特的課後溫習鞏固環節, 對小朋友英文提升效果超乎你想像</p>
-		<video controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video3.mp4"></video>
+	<div class="bg-blue-100 p-2 my-4">
+		<div class="my-4">
+			<h2>重要課後溫習鞏固環節</h2>
+			<p>極為獨特的課後溫習鞏固環節, 對小朋友英文提升效果超乎你想像</p>
+			<video controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video3.mp4"></video>
+		</div>
 	</div>
 
 	<div class="p-4 bg-gray-200">
