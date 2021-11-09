@@ -17,12 +17,8 @@
 			href: `/${$locale}/zoom/one-on-one`
 		},
 		{
-			label: 'en',
-			href: `/en/powerful-solution`
-		},
-		{
-			label: 'hk',
-			href: '/hk/powerful-solution'
+			label: 'powerful_solution.title',
+			href: `/${$locale}/powerful-solution`
 		}
 	]
 </script>
