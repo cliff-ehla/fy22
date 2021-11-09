@@ -13,6 +13,11 @@
 			title_en: 'Reading & Speaking Elite Programme',
 			title_hk: '精英閱讀與主題對談',
 			href: 'reading-and-speaking-elite-programme'
+		},
+		{
+			title_en: 'Reading & Speaking Elite Programme',
+			title_hk: '閱讀、寫作與主題對話 英國適應課程',
+			href: 'reading-writing-and-speaking-bridging-uk'
 		}
 	]
 </script>
