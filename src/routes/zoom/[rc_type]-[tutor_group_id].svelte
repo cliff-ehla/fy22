@@ -10,10 +10,18 @@
 			},
 			body: JSON.stringify(body)
 		})
-		const json = await res.json()
-		return {
-			props: {
-				lesson: json.data
+
+		if (res.ok) {
+			const json = await res.json()
+
+			const res2 = await fetch(`/zoom/zoom_tutor_by_id.json?tutor_id=${json.data.tutor_id}`)
+			const json2 = await res2.json()
+
+			return {
+				props: {
+					lesson: json.data,
+					tutor: json2.data
+				}
 			}
 		}
 	}
@@ -23,9 +31,9 @@
 	import dayjs from 'dayjs'
 
 	export let lesson
+	export let tutor
 
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
-	let tutor
 </script>
 
 <div class="bg-gray-100 md:pt-8">
