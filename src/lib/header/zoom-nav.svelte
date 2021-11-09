@@ -12,6 +12,14 @@
 		{
 			label: 'zoom.one_on_one',
 			href: '/zoom/one-on-one'
+		},
+		{
+			label: 'en',
+			href: '/en/powerful-solution'
+		},
+		{
+			label: 'hk',
+			href: '/hk/powerful-solution'
 		}
 	]
 </script>
