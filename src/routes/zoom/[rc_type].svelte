@@ -34,20 +34,32 @@
 <script>
 	export let teacher_list
 	export let classroom
+
+	import LessonPreview from '$lib/zoom/preview.svelte'
+	import {page} from '$app/stores'
 </script>
 
-<b>Tutor</b>
-{#if teacher_list && teacher_list.length}
-	{#each teacher_list as t}
-		<p>{t.display_name}</p>
-	{/each}
-{/if}
+<div class="mt-6 mb-4 mx-4 md:mx-auto max-w-screen-lg">
+	{#if teacher_list && teacher_list.length}
+		<div class="flex overflow-auto">
+			{#each teacher_list as tutor}
+				<a href="/zoom/teacher/{tutor.tutor_id}" class="w-20 sm:w-28 mr-2 sm:mr-4">
+					<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
+					<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
+				</a>
+			{/each}
+		</div>
+	{/if}
+</div>
 
-<b>Classroom</b>
-{#if classroom && classroom.length}
-	{#each classroom as c}
-		<p>
-			<a href="/zoom/{c.rc_type}-{c.tutor_group_id}">{c.name}</a>
-		</p>
-	{/each}
-{/if}
+<div class="mt-4 sm:pt-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg">
+	{#if classroom && classroom.length}
+		{#each classroom as c}
+			<LessonPreview item={c}/>
+		{/each}
+	{/if}
+</div>
+
+<svelte:head>
+	<title>{$page.params.rc_type} class - EHLA</title>
+</svelte:head>
