@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <div class="mx-auto p-4 max-w-screen-lg">
 	<h1>精英躍升寫作課程</h1>
 	<p>🎯 教授各種寫作技巧，例如：動詞、連接詞與形容詞的應用技巧 application of verbs, connectives and adjectives 明喻smiles, 暗喻metaphors, 擬聲詞onomatopoeia, 擬人化personification, 製造緊張和懸疑building tension and suspense...</p>

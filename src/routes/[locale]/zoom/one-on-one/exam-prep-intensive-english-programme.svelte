@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <h1 class="text-t1">呈分試英文特訓外教課程</h1>
 <p>(小四至小六)</p>
 

@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <div class="mx-auto p-4 max-w-screen-lg">
 	<h1 class="text-t1">小精英級K班課程</h1>
 	<p>閱讀與英語會話是英文重要基礎! 3至6歲是語言學習一個極為重要的階段。課程提供了不可多得的純正英語環境及機會給孩子，在閱讀教學之中學習與外籍老師實時互動，不知不覺提升英文閱讀和說話能力。這是香港本地老師和父母難以做到的!</p>

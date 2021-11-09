@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <div class="p-4">
 	<div class="mb-8">
 		<h1 class="text-t2 font-bold mb-1">精英閱讀與主題對談</h1>

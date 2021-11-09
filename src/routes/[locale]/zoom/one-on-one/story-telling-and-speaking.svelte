@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <div class="p-4">
 	<div class="mb-8">
 		<h1 class="text-t2 font-bold mb-1">英文故事閱讀與會話課堂</h1>
