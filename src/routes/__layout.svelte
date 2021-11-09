@@ -1,6 +1,6 @@
 <script>
 	import ZoomNav from '$lib/header/zoom-nav.svelte'
-	import '../app.css';
+	import '../styles/tailwind-output.css';
 </script>
 
 <ZoomNav/>
