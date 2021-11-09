@@ -23,6 +23,9 @@
 	import dayjs from 'dayjs'
 
 	export let lesson
+
+	import TeacherSection from '$lib/zoom/teacher-section.svelte'
+	let tutor
 </script>
 
 <div class="bg-gray-100 md:pt-8">
@@ -43,6 +46,14 @@
 	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{lesson.rc_type}</div>
 
 	<p class="mt-4 text-gray-500">{lesson.article_ori}</p>
+</div>
+
+<div class="bg-gray-100 p-4 border-t border-gray-200">
+	<div class="max-w-screen-lg mx-auto">
+		{#if tutor}
+			<TeacherSection teacher={tutor}/>
+		{/if}
+	</div>
 </div>
 
 <svelte:head>
