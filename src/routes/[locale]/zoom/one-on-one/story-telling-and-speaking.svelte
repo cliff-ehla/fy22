@@ -2,6 +2,11 @@
 	export const prerender = true;
 </script>
 
+<script>
+	import AfterClassRevisionModule from '$lib/zoom/one-on-one/after-class-revision-module.svelte'
+	import VocabFeature from '$lib/zoom/one-on-one/vocab-feature.svelte'
+</script>
+
 <div class="p-4">
 	<div class="mb-8">
 		<h1 class="text-t2 font-bold mb-1">英文故事閱讀與會話課堂</h1>
@@ -16,21 +21,11 @@
 		<video class="max-w-full max-w-xl" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/story-telling.mp4"></video>
 	</div>
 
-	<div class="my-8">
-		<h2 class="font-bold text-t1 mb-2">重要課後學習鞏固配套</h2>
-		<video class="max-w-full max-w-xl" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/story-telling.mp4"></video>
+	<div class="p-2 bg-yellow-100">
+		<AfterClassRevisionModule/>
 	</div>
 
-	<div class="my-8">
-		<h2 class="font-bold text-t1 mb-2">學校課文詞彙高效提升</h2>
-		<p>詞彙量不足唔解決，補幾多習成效都唔會大❗
-
-			校本課程詞彙高效提升系統:
-			🎯同時解決課文串字難Spelling問題
-			🎯高效解決詞彙默書(Dictation)問題
-			🎯解決詞彙發音問題
-
-			只要訂閱課後鞏固套裝(10套起), 就可以極為優惠的價格每月$50訂閱 (公開零售價：每月訂閱費HK$168)</p>
-		<video class="max-w-xl" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/story-telling.mp4"></video>
+	<div class="p-2 bg-blue-100">
+		<VocabFeature/>
 	</div>
 </div>
