@@ -20,8 +20,19 @@
 </script>
 
 <script>
+	import dayjs from 'dayjs'
+
 	export let lesson
 </script>
+
+<div class="bg-gray-100 md:pt-8">
+	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path}); max-width: 720px"></div>
+	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
+		<div class="max-w-screen-lg mx-auto w-full px-4">
+			{dayjs(lesson.start_time).format('DD MMM YYYY HH:mma')}
+		</div>
+	</div>
+</div>
 
 <div class="bg-white max-w-screen-lg mx-auto p-4">
 	<p class="text-blue-500">{lesson.rc_tag}</p>
