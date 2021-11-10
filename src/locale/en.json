@@ -1,9 +1,9 @@
 {
   "zoom": {
-    "title": "Zoom class",
+    "title": "NET Zoom Class",
     "small_class": "Small class",
     "big_class": "Big class",
-    "one_on_one": "One on one",
+    "one_on_one": "One-on-one",
     "tag": {
       "All": "All",
       "happy": "Testing"
