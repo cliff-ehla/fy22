@@ -6,13 +6,13 @@ const http = (() => {
 				resource += `?${property}=${query[property]}`
 			}
 		}
-		const res = await fetch(resource)
+		const res = await fetch('/api' + resource)
 		return await res.json()
 	}
 
 	async function post (fetch, resource, body) {
 		try {
-			const res = await fetch(resource, {
+			const res = await fetch('/api' + resource, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

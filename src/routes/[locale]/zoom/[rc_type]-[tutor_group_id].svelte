@@ -2,12 +2,12 @@
 	import {http} from "$lib/http";
 
 	export const load = async ({fetch, page}) => {
-		const res = await http.post(fetch, '/api/registrable_classroom_by_tutor_group_id', {
+		const res = await http.post(fetch, '/registrable_classroom_by_tutor_group_id', {
 			tutor_group_id: page.params.tutor_group_id
 		})
 
 		if (res.success) {
-			const res2 = await http.get(fetch, '/api/zoom_tutor_by_id', {
+			const res2 = await http.get(fetch, '/zoom_tutor_by_id', {
 				tutor_id: res.data.tutor_id
 			})
 
