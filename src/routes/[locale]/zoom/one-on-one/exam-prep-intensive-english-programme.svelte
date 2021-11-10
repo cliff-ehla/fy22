@@ -6,6 +6,7 @@
 	import {page} from '$app/stores'
 	import ExamTrainingPack from '$lib/zoom/one-on-one/exam-training-pack.svelte'
 	import VocabFeature from '$lib/zoom/one-on-one/vocab-feature.svelte'
+	import WhatsappEnquiry from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
 </script>
 
 <div class="mx-auto p-4 max-w-screen-lg">
@@ -34,6 +35,11 @@
 	</div>
 	<div class="p-2 bg-blue-100">
 		<VocabFeature/>
+	</div>
+	<div class="p-4 bg-gray-200 rounded">
+		<p>形式：一對一 Zoom</p>
+		<p>課時: 每節課30/40分鐘</p>
+		<WhatsappEnquiry/>
 	</div>
 </div>
 

@@ -6,6 +6,7 @@
 	import {page} from '$app/stores'
 	import AfterClassRevisionModule from '$lib/zoom/one-on-one/after-class-revision-module.svelte'
 	import VocabFeature from '$lib/zoom/one-on-one/vocab-feature.svelte'
+	import WhatsappEnquiry from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
 </script>
 
 <div class="p-4">
@@ -18,7 +19,7 @@
 
 	<div class="my-8">
 		<h2 class="font-bold text-t1 mb-2">分享</h2>
-		<p>❝一個同外籍老師學英文，聽及講咗1年英文的小朋友，與另一個無同等經歷的小朋友，分別是什麼？❞</p>
+		<p class="font-bold text-blue-500">❝一個同外籍老師學英文，聽及講咗1年英文的小朋友，與另一個無同等經歷的小朋友，分別是什麼？❞</p>
 		以下是視頻解答：
 		<video class="max-w-full max-w-xl" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/story-telling.mp4"></video>
 	</div>
@@ -29,5 +30,10 @@
 
 	<div class="p-2 bg-blue-100">
 		<VocabFeature/>
+	</div>
+	<div class="p-4 bg-gray-200 rounded">
+		<p>形式：一對一 Zoom</p>
+		<p>課時: 每節課30/40分鐘</p>
+		<WhatsappEnquiry/>
 	</div>
 </div>
