@@ -20,15 +20,15 @@
       "p4": "Comprehension booster",
       "p5": "AI diagnostic & remedial learning",
       "p6": "YLE/Trinity exam vocab booster"
-    },
-    "exam": {
-      "title": "Exam-prep Revision & Tutorial Packs",
-      "subtitle": "Goes beyond your expectations!",
-      "p1": "Reading comprehension*",
-      "p2": "Grammar usage*",
-      "p3": "Listening training*",
-      "p4": "Writing & tutoring*",
-      "note": "Supported with after-class bilingual teaching videos by senior teachers from HK day schools to ensure that the student can completely absorb and digest the knowledge points after class, if she or he cannot fully understand what the native speaker teacher has taught in Zoom class. "
     }
+  },
+  "exam_training_pack": {
+    "title": "Exam-prep Revision & Tutorial Packs",
+    "subtitle": "Goes beyond your expectations!",
+    "p1": "Reading comprehension*",
+    "p2": "Grammar usage*",
+    "p3": "Listening training*",
+    "p4": "Writing & tutoring*",
+    "note": "Supported with after-class bilingual teaching videos by senior teachers from HK day schools to ensure that the student can completely absorb and digest the knowledge points after class, if she or he cannot fully understand what the native speaker teacher has taught in Zoom class. "
   }
 }
