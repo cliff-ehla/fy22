@@ -7,6 +7,8 @@
 	import hk from '../locale/hk.json'
 	import {register, init} from 'svelte-i18n'
 	import {page} from '$app/stores'
+	import {navigating} from "$app/stores";
+	import {scale} from 'svelte/transition'
 
 	addMessages('en', en)
 	addMessages('hk', hk)
@@ -25,5 +27,8 @@
 
 <ZoomNav/>
 <main>
+	{#if $navigating}
+		<div in:scale class="fixed top-0 inset-x-0 h-2 bg-red-500 transform duration-700 origin-left transition-transform"></div>
+	{/if}
 	<slot />
 </main>
