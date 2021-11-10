@@ -9,19 +9,19 @@ module.exports = {
   },
   theme: {
     fontSize: {
-      'xxs': ['0.6rem'],
-      'xs': ['0.75rem'],
-      'sm': ['0.875rem'],
-      DEFAULT: ['1rem'],
-      'p2': ['1.125rem'],
-      'p3': ['1.375rem'],
-      'p4': ['1.625rem'],
-      't1': ['1.875rem', {lineHeight: '1.1'}],
-      't2': ['2.5rem', {lineHeight: '1.1'}],
-      't3': ['3.125rem', {lineHeight: '1'}],
-      'h1': ['3.75rem', {lineHeight: '1'}],
-      'h2': ['5rem', {lineHeight: '1'}],
-      'h3': ['5.625rem', {lineHeight: '1'}]
+      'xxs': ['0.6em'],
+      'xs': ['0.75em'],
+      'sm': ['0.875em'],
+      DEFAULT: ['1em'],
+      'p2': ['1.125em'],
+      'p3': ['1.375em'],
+      'p4': ['1.625em'],
+      't1': ['1.25em', {lineHeight: '1.1'}],
+      't2': ['1.5em', {lineHeight: '1.1'}],
+      't3': ['1.75em', {lineHeight: '1'}],
+      'h1': ['3.75em', {lineHeight: '1'}],
+      'h2': ['5em', {lineHeight: '1'}],
+      'h3': ['5.625em', {lineHeight: '1'}]
     },
     colors: {
       transparent: 'transparent',
@@ -32,9 +32,9 @@ module.exports = {
         '50': '#FCFCFC',
         '100': '#FAFAFA',
         '200': '#F2F2F2',
-        '300': '#DDDDDD',
-        '400': '#7B818E',
-        '500': '#616161',
+        '300': '#b4b4b4',
+        '400': '#8B8B8B',
+        '500': '#403131',
         '700': '#424242',
         '800': '#000000'
       },
@@ -44,7 +44,7 @@ module.exports = {
       },
       blue: {
         '100': '#eefbff',
-        '500': '#3ADCFF',
+        '500': '#007AFF',
         '600': '#67CDEB',
         '700': '#1BC6CF',
         '800': '#1794b9'

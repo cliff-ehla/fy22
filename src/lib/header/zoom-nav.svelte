@@ -24,17 +24,17 @@
 </script>
 
 <div class="m-4 mx-auto max-w-screen-lg px-4">
-	<div class="flex">
-		<h1 class="font-bold md:text-h1 text-p3">{$_('zoom.title')}</h1>
-		<div class="ml-auto">
+	<div class="flex items-center">
+		<h1 class="font-bold md:text-h1 text-t1">{$_('zoom.title')}</h1>
+		<div class="ml-auto flex items-center">
 			<LocaleSwitch/>
 		</div>
 	</div>
-	<div class="flex mt-2">
+	<div class="flex mt-2 overflow-x-scroll">
 		{#each nav_items as item}
 			<a
 							class:active={$page.path.startsWith(item.href.split('?')[0])}
-							href={item.href} class="text-sm md:text-p3 mr-4 pb-1 whitespace-nowrap relative">{$_(item.label)}
+							href={item.href} class="text-gray-400 text md:text-p3 mr-3 pb-1 whitespace-nowrap relative">{$_(item.label)}
 				{#if $page.path.startsWith(item.href.split('?')[0])}
 					<span class="absolute h-0.5 bg-black inset-x-0 bottom-0"></span>
 				{/if}
@@ -42,3 +42,9 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	.active {
+			@apply text-black;
+	}
+</style>
