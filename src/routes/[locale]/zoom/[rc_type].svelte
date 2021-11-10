@@ -30,7 +30,7 @@
 	export let teacher_list
 	export let classroom
 
-	import LessonPreview from '$lib/zoom/preview.svelte'
+	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
 	import {page} from '$app/stores'
 </script>
 
@@ -38,7 +38,7 @@
 	{#if teacher_list && teacher_list.length}
 		<div class="flex overflow-auto">
 			{#each teacher_list as tutor}
-				<a href="/zoom/teacher/{tutor.tutor_id}" class="w-20 sm:w-28 mr-2 sm:mr-4">
+				<a href="tutor/{tutor.tutor_id}" class="w-20 sm:w-28 mr-2 sm:mr-4">
 					<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
 					<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
 				</a>
