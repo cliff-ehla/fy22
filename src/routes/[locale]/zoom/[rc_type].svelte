@@ -2,11 +2,11 @@
 	import {http} from "$lib/http";
 
 	export const load = async ({fetch, page}) => {
-		const res = await http.get(fetch, '/api/list_zoom_tutor.json', {
+		const res = await http.get(fetch, '/api/list_zoom_tutor', {
 			rc_type: page.params.rc_type
 		})
 
-		const res2 = await http.post(fetch, '/api/list_registrable_classroom.json', {
+		const res2 = await http.post(fetch, '/api/list_registrable_classroom', {
 			rc_type: page.params.rc_type,
 			rc_tag: page.query.rc_tag || 'all'
 		})
