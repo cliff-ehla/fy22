@@ -5,11 +5,6 @@
 <script>
 	const ad_list = [
 		{
-			title_en: 'Elite Creative Writing Class',
-			title_hk: '精英躍升英文寫作課程',
-			href: 'elite-creative-writing-class'
-		},
-		{
 			title_en: 'Reading & Speaking Programme (below 6 yro)',
 			title_hk: '小精英級K班課程',
 			href: 'reading-and-speaking-for-kindergarten'
@@ -30,6 +25,11 @@
 			title_en: 'Story telling and speaking',
 			title_hk: '英文故事閱讀與會話課堂',
 			href: 'story-telling-and-speaking'
+		},
+		{
+			title_en: 'Elite Creative Writing Class',
+			title_hk: '精英躍升英文寫作課程',
+			href: 'elite-creative-writing-class'
 		},
 		{
 			title_en: 'Reading & Speaking Elite Programme',

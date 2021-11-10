@@ -1,4 +1,8 @@
 {
+  "whatsapp": {
+    "title": "報名查詢",
+    "desc": "3050專綫whatsapp"
+  },
   "zoom": {
     "title": "外籍老師Zoom課堂",
     "small_class": "小組課",
