@@ -25,7 +25,8 @@
 
 <div class="m-4 mx-auto max-w-screen-lg px-4">
 	<div class="flex items-center">
-		<h1 class="font-bold md:text-h1 text-t1">{$_('zoom.title')}</h1>
+		<img src="/logo.png" alt="logo" sizes="80" class="w-12"/>
+		<h1 class="font-bold md:text-h1 text-t1 ml-2">{$_('zoom.title')}</h1>
 		<div class="ml-auto flex items-center">
 			<LocaleSwitch/>
 		</div>
@@ -45,6 +46,6 @@
 
 <style>
 	.active {
-			@apply text-black;
+			@apply text-black font-bold;
 	}
 </style>

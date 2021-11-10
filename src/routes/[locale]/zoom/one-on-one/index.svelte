@@ -47,7 +47,10 @@
 		{#each ad_list as item}
 			<div class="mb-4">
 <!--				<img class="rounded-sm" src={item.thumbnail_path} alt={item.name}>-->
-				<a href="one-on-one/{item.href}" class="mt-2 text-blue-500 font-bold text-t1">{item.title_hk}</a>
+				<a class="mb-2 block" href="one-on-one/{item.href}">
+					<img class="rounded" src="https://ehla-media-bucket.s3.amazonaws.com/cms/ansvideo_new_test2.jpg" alt={item.title_hk}>
+					<p class="mt-2 text-blue-500 font-bold text-t1">{item.title_hk}</p>
+				</a>
 			</div>
 		{/each}
 	</div>
