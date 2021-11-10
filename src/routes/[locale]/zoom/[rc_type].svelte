@@ -1,32 +1,27 @@
 <script context="module">
-	export const load = async ({fetch, page}) => {
-		console.log(page.params)
-		const res = await fetch(`/api/list_zoom_tutor.json?rc_type=${page.params.rc_type}`)
-		const json = await res.json()
+	import {http} from "$lib/http";
 
-		const _body = {
+	export const load = async ({fetch, page}) => {
+		const res = await http.get(fetch, '/api/list_zoom_tutor.json', {
+			rc_type: page.params.rc_type
+		})
+
+		const res2 = await http.post(fetch, '/api/list_registrable_classroom.json', {
 			rc_type: page.params.rc_type,
 			rc_tag: page.query.rc_tag || 'all'
-		}
-		const res2 = await fetch(`/api/list_registrable_classroom.json`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(_body)
 		})
-		const json2 = await res2.json()
 
-		if (res.ok) {
+		if (res.success && res2.success) {
 			return {
 				props: {
-					teacher_list: json.data,
-					classroom: json2.data
+					teacher_list: res.data,
+					classroom: res2.data
 				}
 			}
 		}
 		return {
-			error: new Error(JSON.stringify(json.debug))
+			error: new Error(JSON.stringify(res.debug)),
+			status: 400
 		};
 	}
 </script>

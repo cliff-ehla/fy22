@@ -7,7 +7,7 @@
 		})
 
 		if (res.success) {
-			const res2 = await http.get(fetch, '/api/zoom_tutor_by_id', {
+			const res2 = await http.get(fetch, '/api/zoom_tutor_by_id.json', {
 				tutor_id: res.data.tutor_id
 			})
 
