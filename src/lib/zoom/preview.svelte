@@ -1,9 +1,10 @@
 <script>
 	export let item
 	import dayjs from "dayjs";
+	import {locale} from 'svelte-i18n'
 </script>
 
-<a href="/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
+<a href="/{$locale}/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
 	<div class="w-20 md:w-28 flex-shrink-0">
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
 	</div>

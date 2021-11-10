@@ -1,28 +1,24 @@
 <script context="module">
+	import {http} from "$lib/http";
+
 	export const load = async ({fetch, page}) => {
-		const body = {
+		const res = await http.post(fetch, '/api/registrable_classroom_by_tutor_group_id.json', {
 			tutor_group_id: page.params.tutor_group_id
-		}
-		const res = await fetch('/api/registrable_classroom_by_tutor_group_id.json', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(body)
 		})
 
-		if (res.ok) {
-			const json = await res.json()
-
-			const res2 = await fetch(`/api/zoom_tutor_by_id.json?tutor_id=${json.data.tutor_id}`)
-			const json2 = await res2.json()
+		if (res.success) {
+			const res2 = await http.get(fetch, '/api/zoom_tutor_by_id', {
+				tutor_id: res.data.tutor_id
+			})
 
 			return {
 				props: {
-					lesson: json.data,
-					tutor: json2.data
+					lesson: res.data,
+					tutor: res2.data
 				}
 			}
+		} else {
+			console.log('fail', res.debug)
 		}
 	}
 </script>

@@ -1,5 +1,6 @@
 <script context="module">
 	export const prerender = true;
+	console.log(12)
 </script>
 
 <script>

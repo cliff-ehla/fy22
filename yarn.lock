@@ -1477,6 +1477,11 @@ universalify@^2.0.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
+url-query-builder@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/url-query-builder/-/url-query-builder-3.0.4.tgz#2a02ed027796730ad6fb9f873de4e9a62ead57fd"
+  integrity sha512-d8MMIygf0rvPjV4b+WdJnEY/Y0JAsmn+ex2gabr2/EdgYgFq3nO0EtPzusRIgOXHkZmZQL372jCQXB+TMJMsgA==
+
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
