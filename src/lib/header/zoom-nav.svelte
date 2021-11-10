@@ -5,12 +5,12 @@
 	import {locale} from 'svelte-i18n'
 	$: nav_items = [
 		{
-			label: 'zoom.small_class',
-			href: `/${$locale}/zoom/small?tag=all`
-		},
-		{
 			label: 'zoom.big_class',
 			href: `/${$locale}/zoom/big?tag=all`
+		},
+		{
+			label: 'zoom.small_class',
+			href: `/${$locale}/zoom/small?tag=all`
 		},
 		{
 			label: 'zoom.one_on_one',
@@ -25,8 +25,10 @@
 
 <div class="m-4 mx-auto max-w-screen-lg px-4">
 	<div class="flex items-center">
-		<img src="/logo.png" alt="logo" sizes="80" class="w-12"/>
-		<h1 class="font-bold md:text-h1 text-t1 ml-2">{$_('zoom.title')}</h1>
+		<a href="/" class="flex items-center">
+			<img src="/logo.png" alt="logo" sizes="80" class="w-12"/>
+			<h1 class="font-bold md:text-h1 text-t1 ml-2">{$_('zoom.title')}</h1>
+		</a>
 		<div class="ml-auto flex items-center">
 			<LocaleSwitch/>
 		</div>

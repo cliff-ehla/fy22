@@ -6,7 +6,7 @@
 	const ad_list = [
 		{
 			title_en: 'Elite Creative Writing Class',
-			title_hk: '精英躍升寫作課程',
+			title_hk: '精英躍升英文寫作課程',
 			href: 'elite-creative-writing-class'
 		},
 		{
@@ -20,8 +20,10 @@
 			href: 'english-language-leap-programme'
 		},
 		{
-			title_en: 'Exam-prep (呈分試) Intensive English Programme (P4-P6)',
-			title_hk: '呈分試英文特訓外教課程 (小四至小六)',
+			title_en: 'Exam-prep (呈分試) Intensive English Programme',
+			title_hk: '呈分試英文特訓外教課程',
+			subtitle_en: '(P4-P6)',
+			subtitle_hk: '(小四至小六)',
 			href: 'exam-prep-intensive-english-programme'
 		},
 		{
@@ -36,7 +38,9 @@
 		},
 		{
 			title_en: 'Reading & Speaking Elite Programme',
-			title_hk: '閱讀、寫作與主題對話 英國適應課程',
+			title_hk: '閱讀、寫作與主題對話',
+			subtitle_en: '',
+			subtitle_hk: '英國適應課程',
 			href: 'reading-writing-and-speaking-bridging-uk'
 		}
 	]
@@ -46,10 +50,12 @@
 	<div class="grid grid-cols-1 gap-4">
 		{#each ad_list as item}
 			<div class="mb-4">
-<!--				<img class="rounded-sm" src={item.thumbnail_path} alt={item.name}>-->
 				<a class="mb-2 block" href="one-on-one/{item.href}">
-					<img class="rounded" src="https://ehla-media-bucket.s3.amazonaws.com/cms/ansvideo_new_test2.jpg" alt={item.title_hk}>
-					<p class="mt-2 text-blue-500 font-bold text-t1">{item.title_hk}</p>
+					<img class="rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{item.href}.jpg" alt={item.title_hk}>
+					<h2 class="mt-2 text-blue-500 font-bold text-t1">{item.title_hk}</h2>
+					{#if item.subtitle_hk}
+						<p class="mt-1 text-blue-400 font-bold text-p2">{item.subtitle_hk}</p>
+					{/if}
 				</a>
 			</div>
 		{/each}
