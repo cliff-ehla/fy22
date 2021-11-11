@@ -12,7 +12,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4">
+<div class="p-4 article">
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		<p>(L1-L4)</p>
@@ -45,15 +45,3 @@
 <svelte:head>
 	<title>{$_(slug)}</title>
 </svelte:head>
-
-<style>
-    h1 {
-        @apply mb-4 font-bold text-t1;
-    }
-    p {
-        @apply mb-6 text-gray-700 leading-relaxed;
-    }
-    li {
-        @apply mb-1;
-    }
-</style>

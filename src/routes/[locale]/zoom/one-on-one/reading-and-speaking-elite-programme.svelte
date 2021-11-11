@@ -9,7 +9,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4">
+<div class="article p-4 article">
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
@@ -44,13 +44,3 @@
 <svelte:head>
 	<title>{$_(slug)}</title>
 </svelte:head>
-
-<style>
-    h1 {
-        @apply mb-4 font-bold;
-        font-size: 20px;
-    }
-    p {
-        @apply mb-4 text-gray-700;
-    }
-</style>

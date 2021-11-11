@@ -9,11 +9,11 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4">
+<div class="p-4 article">
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		{#if $locale === 'hk'}
-			<p>英國適應課程</p>
+			<div role="doc-subtitle">英國適應課程</div>
 		{/if}
 		<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 		{#if $locale === 'hk'}
@@ -33,13 +33,3 @@
 		<WhatsappEnquiry/>
 	</div>
 </div>
-
-
-<style>
-    h1 {
-        @apply mb-4 font-bold text-blue-500 text-t1;
-    }
-    p {
-        @apply mb-4 text-gray-700;
-    }
-</style>

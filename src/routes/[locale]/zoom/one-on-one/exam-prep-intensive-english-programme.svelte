@@ -11,7 +11,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="mx-auto p-4 max-w-screen-lg">
+<div class="article mx-auto p-4 max-w-screen-lg">
 	<h1>{$_(slug)}</h1>
 	<p>(小四至小六)</p>
 	<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
@@ -62,16 +62,3 @@
 <svelte:head>
 	<title>{$_(slug)}</title>
 </svelte:head>
-
-<style>
-    h1 {
-        @apply mb-4 font-bold;
-        font-size: 20px;
-    }
-    p, ul {
-        @apply my-4 text-gray-700;
-    }
-    li {
-        @apply mb-1 text-gray-700;
-    }
-</style>

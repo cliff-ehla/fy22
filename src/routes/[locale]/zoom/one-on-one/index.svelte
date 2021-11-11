@@ -1,6 +1,6 @@
 <script context="module">
 	export const prerender = true;
-	import {locale} from 'svelte-i18n'
+	import {locale, _} from 'svelte-i18n'
 </script>
 
 <script>

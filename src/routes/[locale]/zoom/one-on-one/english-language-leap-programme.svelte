@@ -12,7 +12,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="mx-auto p-4 max-w-screen-lg">
+<div class="mx-auto p-4 max-w-screen-lg article">
 	<h1>{$_(slug)}</h1>
 	<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 	{#if $locale === 'hk'}
@@ -50,8 +50,10 @@
 		<VocabFeature/>
 	</div>
 	<div class="p-4 bg-gray-200 rounded">
-		<li>{$_('lesson_format')}</li>
-		<li>{$_('lesson_duration_30_40')}</li>
+		<ul>
+			<li>{$_('lesson_format')}</li>
+			<li>{$_('lesson_duration_30_40')}</li>
+		</ul>
 		<WhatsappEnquiry/>
 	</div>
 </div>
@@ -59,16 +61,3 @@
 <svelte:head>
 	<title>{$_(slug)}</title>
 </svelte:head>
-
-<style>
-    h1 {
-        @apply mb-4 font-bold;
-        font-size: 20px;
-    }
-    p, ul {
-        @apply my-4 text-gray-700;
-    }
-    li {
-		    @apply mb-1 text-gray-700;
-    }
-</style>
