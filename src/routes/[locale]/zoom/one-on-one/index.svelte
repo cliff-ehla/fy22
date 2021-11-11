@@ -64,3 +64,7 @@
 		{/each}
 	</div>
 </div>
+
+<svelte:head>
+	<title>{$_('one_on_one')}</title>
+</svelte:head>

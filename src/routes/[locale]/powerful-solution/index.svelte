@@ -10,7 +10,7 @@
 	import {_} from 'svelte-i18n'
 </script>
 
-<div class="">
+<div class="article">
 	<div class="p-4 sm:p-8">
 		<h1 class="mb-2">{$_('powerful_solution.title')}</h1>
 		<p class="text-p2">{$_('powerful_solution.desc')}</p>
@@ -33,8 +33,6 @@
 	</div>
 </div>
 
-<style>
-	h1 {
-			@apply text-t2 font-bold;
-	}
-</style>
+<svelte:head>
+	<title>{$_('powerful_solution.title')}</title>
+</svelte:head>

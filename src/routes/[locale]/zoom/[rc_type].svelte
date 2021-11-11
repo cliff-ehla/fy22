@@ -32,6 +32,7 @@
 
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
 	import {page} from '$app/stores'
+	import {_} from "svelte-i18n"
 </script>
 
 <div class="mt-6 mb-4 mx-4 md:mx-auto max-w-screen-lg">
@@ -56,5 +57,5 @@
 </div>
 
 <svelte:head>
-	<title>{$page.params.rc_type} class - EHLA</title>
+	<title>{$_(`${$page.params.rc_type}_class`)}</title>
 </svelte:head>
