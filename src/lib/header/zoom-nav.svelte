@@ -27,7 +27,7 @@
 	<div class="flex items-center md:mb-4">
 		<a href="/" class="flex items-center">
 			<img src="/logo.png" alt="logo" sizes="80" class="w-12 md:w-16"/>
-			<h1 class="font-bold text-t1 md:text-t2 ml-2">{$_('title')}</h1>
+			<h1 class="font-bold text-t1 md:text-t2 ml-2">{$_('site_title')}</h1>
 		</a>
 		<div class="ml-auto flex items-center">
 			<LocaleSwitch/>

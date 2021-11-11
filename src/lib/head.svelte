@@ -2,7 +2,7 @@
 	import {_} from 'svelte-i18n'
 	import {page} from '$app/stores'
 
-	export let image = "//ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/ehla-zoom-key-image.jpeg";
+	export let image = "https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/ehla-zoom-key-image.jpeg";
 	export let title = "";
 	export let description = "EHLA | Goes beyond your expectations!";
 	export let keywords = "online-lesson";
