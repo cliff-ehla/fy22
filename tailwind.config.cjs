@@ -16,12 +16,11 @@ module.exports = {
       'p2': ['1.125em'],
       'p3': ['1.375em'],
       'p4': ['1.625em'],
-      't1': ['1.25em', {lineHeight: '1.1'}],
-      't2': ['1.5em', {lineHeight: '1.1'}],
-      't3': ['1.75em', {lineHeight: '1'}],
-      'h1': ['3.75em', {lineHeight: '1'}],
-      'h2': ['5em', {lineHeight: '1'}],
-      'h3': ['5.625em', {lineHeight: '1'}]
+      't1': ['1.25em', {lineHeight: '1.12'}],
+      't2': ['1.5em', {lineHeight: '1.12'}],
+      't3': ['1.75em', {lineHeight: '1.12'}],
+      'h1': ['2em', {lineHeight: '1'}],
+      'h2': ['2.5em', {lineHeight: '1'}]
     },
     colors: {
       transparent: 'transparent',

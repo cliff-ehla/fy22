@@ -13,7 +13,11 @@
 
 <div class="article mx-auto p-4 max-w-screen-lg">
 	<h1>{$_(slug)}</h1>
-	<p>(小四至小六)</p>
+	{#if $locale === 'hk'}
+		<p>(小四至小六)</p>
+	{:else}
+		<p>P4-P6</p>
+	{/if}
 	<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 	{#if $locale === 'hk'}
 		<p>為幫學生全面預備呈分試，課程編排上，外籍老師在課堂上的教學，不會只局限在會話等狹窄範疇，而會針對多個範疇(讀、寫、聽、說、文法)對學生進行特訓。</p>

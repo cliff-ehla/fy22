@@ -24,10 +24,10 @@
 </script>
 
 <div class="m-4 mx-auto max-w-screen-lg px-4">
-	<div class="flex items-center">
+	<div class="flex items-center md:mb-4">
 		<a href="/" class="flex items-center">
-			<img src="/logo.png" alt="logo" sizes="80" class="w-12"/>
-			<h1 class="font-bold md:text-h1 text-t1 ml-2">{$_('title')}</h1>
+			<img src="/logo.png" alt="logo" sizes="80" class="w-12 md:w-16"/>
+			<h1 class="font-bold text-t1 md:text-t2 ml-2">{$_('title')}</h1>
 		</a>
 		<div class="ml-auto flex items-center">
 			<LocaleSwitch/>
@@ -37,7 +37,7 @@
 		{#each nav_items as item}
 			<a
 							class:active={$page.path.startsWith(item.href.split('?')[0])}
-							href={item.href} class="text-gray-400 text md:text-p3 mr-3 pb-1 whitespace-nowrap relative">{$_(item.label)}
+							href={item.href} class="text-gray-400 text md:text-t1 mr-3 pb-1 whitespace-nowrap relative">{$_(item.label)}
 				{#if $page.path.startsWith(item.href.split('?')[0])}
 					<span class="absolute h-0.5 bg-black inset-x-0 bottom-0"></span>
 				{/if}

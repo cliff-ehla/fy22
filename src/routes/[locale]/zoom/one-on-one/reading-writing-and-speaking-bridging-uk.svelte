@@ -14,6 +14,8 @@
 		<h1>{$_(slug)}</h1>
 		{#if $locale === 'hk'}
 			<div role="doc-subtitle">英國適應課程</div>
+		{:else}
+			<div role="doc-subtitle">UK Curriculum</div>
 		{/if}
 		<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 		{#if $locale === 'hk'}

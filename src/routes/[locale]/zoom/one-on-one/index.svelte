@@ -40,7 +40,7 @@
 		{
 			title_en: 'Reading & Speaking Elite Programme',
 			title_hk: '閱讀、寫作與主題對話',
-			subtitle_en: '',
+			subtitle_en: 'UK curriculum',
 			subtitle_hk: '英國適應課程',
 			href: 'reading-writing-and-speaking-bridging-uk'
 		}

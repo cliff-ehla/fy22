@@ -10,26 +10,34 @@
 	import {_} from 'svelte-i18n'
 </script>
 
-<div class="article">
-	<div class="p-4 sm:p-8">
+<div class="my-8">
+	<div class="article container mb-8 pb-8 border-b border-gray-200">
 		<h1 class="mb-2">{$_('powerful_solution.title')}</h1>
-		<p class="text-p2">{$_('powerful_solution.desc')}</p>
+		<p class="text-p2 md:text-p3">{$_('powerful_solution.desc')}</p>
 	</div>
 
-	<div class="p-4 sm:p-8 bg-gray-100">
-		<VocabFeature show_price/>
+	<div class="bg-yellow-100 py-8">
+		<div class="container">
+			<VocabFeature show_price/>
+		</div>
 	</div>
 
-	<div class="p-4 sm:p-8">
-		<KClassRevisionModule/>
+	<div class="bg-blue-100 py-8">
+		<div class="container">
+			<KClassRevisionModule/>
+		</div>
 	</div>
 
-	<div class="p-4 sm:p-8 bg-gray-200">
-		<AfterClassRevisionModule show_price/>
+	<div class="bg-yellow-100 py-8">
+		<div class="container">
+			<AfterClassRevisionModule show_price/>
+		</div>
 	</div>
 
-	<div class="p-4 sm:p-8">
-		<ExamTrainingPack show_price/>
+	<div class="bg-blue-100 py-8">
+		<div class="container">
+			<ExamTrainingPack show_price/>
+		</div>
 	</div>
 </div>
 
