@@ -11,6 +11,7 @@
   },
   "powerful_solution" : {
     "title": "Powerful solution",
+    "desc": "The English learning resources, artificial intelligence, learning functions and after-class revision solutions provided by EHLA are currently unparalleled in the globe!",
     "vocab": {
       "title": "Vocabulary & Spelling Booster ",
       "subtitle": "AI-powered features for exam-prep",
@@ -21,6 +22,12 @@
       "p5": "AI diagnostic & remedial learning",
       "p6": "YLE/Trinity exam vocab booster"
     }
+  },
+  "k3_revision_pack": {
+    "title": "Revision Module for Kids 3yro＋",
+    "subtitle": "Boosting effect goes beyond your expectations!",
+    "desc": "The unparalleled boosting effect of the revision module goes beyond your expectations: ",
+    "note": "Currently only open to subscription for one-on-one class, big class or small-group class students at a special price of HK$30 per set. Study time for each set: one month. "
   },
   "exam_training_pack": {
     "title": "Exam-prep Revision & Tutorial Packs",
