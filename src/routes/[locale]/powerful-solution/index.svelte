@@ -12,12 +12,12 @@
 
 <div class="">
 	<div class="p-4 sm:p-8">
-		<h1 class="text-t2 font-bold mb-4">{$_('powerful_solution.title')}</h1>
-		<p>{$_('powerful_solution.desc')}</p>
+		<h1 class="mb-2">{$_('powerful_solution.title')}</h1>
+		<p class="text-p2">{$_('powerful_solution.desc')}</p>
 	</div>
 
 	<div class="p-4 sm:p-8 bg-gray-100">
-		<VocabFeature/>
+		<VocabFeature show_price/>
 	</div>
 
 	<div class="p-4 sm:p-8">
@@ -32,3 +32,9 @@
 		<ExamTrainingPack/>
 	</div>
 </div>
+
+<style>
+	h1 {
+			@apply text-t2 font-bold;
+	}
+</style>

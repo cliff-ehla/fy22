@@ -1,5 +1,7 @@
 <script>
 	import {_} from 'svelte-i18n'
+
+	export let powerful = false
 </script>
 
 <div class="flex items-center">
@@ -9,4 +11,4 @@
 	</svg>
 	<div class="font-bold text-t1 leading-tight ml-2">{$_('enquiry')}</div>
 </div>
-<p class="text-p2">Whatsapp: (+852) 9654 8680</p>
+<p class="text-p2">Whatsapp: (+852) {powerful ? '9800 2543' : '9654 8680'}</p>

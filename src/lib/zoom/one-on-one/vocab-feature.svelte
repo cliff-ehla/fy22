@@ -1,32 +1,44 @@
 <script>
 	import Icon from '$lib/ui/icon.svelte'
 	import {_} from 'svelte-i18n'
+	import Whatsapp from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
+
+	export let show_price
 </script>
 
-<div class="mb-4">
-	<h2 class="">{$_('powerful_solution.vocab.title')}</h2>
-	<p class="">{$_('powerful_solution.vocab.subtitle')}</p>
-</div>
+<h2>{$_('vocab_module.title')}</h2>
+<div role="doc-subtitle">{$_('vocab_module.subtitle')}</div>
 <ul>
 	{#each [1,2,3,4,5,6] as i}
-		<li class="flex">
-			<Icon name="tick" className="w-6 text-green-500"/>
-			<div class="ml-2">{$_(`powerful_solution.vocab.p${i}`)}</div>
-		</li>
+		<li>🎯 {$_(`vocab_module.p${i}`)}</li>
 	{/each}
 </ul>
+{#if show_price}
+	<div class="p-2 bg-gray-100" style="font-size: 15px">
+		<p class="underline">{$_('vocab_module.order.title')}</p>
+		<ul>
+			{#each [1,2] as i}
+				<li>{$_(`vocab_module.order.p${i}`)}</li>
+			{/each}
+		</ul>
+		<p>{$_('vocab_module.order.p3')}</p>
+		<Whatsapp powerful/>
+	</div>
+{/if}
 <video controls class="mb-2" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video_1.mp4"></video>
 <video controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video2.mp4"></video>
 
 <style>
     h2 {
-        @apply mb-4 font-bold;
-        font-size: 20px;
+        @apply text-t1 text-black;
+    }
+    [role="doc-subtitle"] {
+		    @apply text-gray-400;
     }
     p, ul {
-        @apply my-4 text-gray-700;
+        @apply my-4 text-gray-500;
     }
     li {
-        @apply mb-1 text-gray-700;
+        @apply mb-1 text-gray-500;
     }
 </style>

@@ -11,16 +11,22 @@
   },
   "powerful_solution" : {
     "title": "Powerful solution",
-    "desc": "The English learning resources, artificial intelligence, learning functions and after-class revision solutions provided by EHLA are currently unparalleled in the globe!",
-    "vocab": {
-      "title": "Vocabulary & Spelling Booster ",
-      "subtitle": "AI-powered features for exam-prep",
-      "p1": "Spelling booster",
-      "p2": "Dictation performance booster",
-      "p3": "Pronunciation booster",
-      "p4": "Comprehension booster",
-      "p5": "AI diagnostic & remedial learning",
-      "p6": "YLE/Trinity exam vocab booster"
+    "desc": "The English learning resources, artificial intelligence, learning functions and after-class revision solutions provided by EHLA are currently unparalleled in the globe!"
+  },
+  "vocab_module": {
+    "title": "Vocabulary & Spelling Booster ",
+    "subtitle": "AI-powered features for exam-prep",
+    "p1": "Spelling booster",
+    "p2": "Dictation performance booster",
+    "p3": "Pronunciation booster",
+    "p4": "Comprehension booster",
+    "p5": "AI diagnostic & remedial learning",
+    "p6": "YLE/Trinity exam vocab booster",
+    "order": {
+      "title": "Exclusive discount for EHLA facebook parent group members ",
+      "p1": "\uD83D\uDC49 If you subscribe for 3 months at a time, enjoy a 10% special discount",
+      "p2": "\uD83D\uDC49 If you subscribe for a single month, enjoy 5% special discount ",
+      "p3": "\uD83D\uDC96 As long as you subscribe to the after-class revision packs (10 sets), you can enjoy the largely discounted subscription fee of $50 per month (retail price: HK$168 monthly). "
     }
   },
   "k3_revision_pack": {
