@@ -26103,8 +26103,9 @@ body {
 }
 
 .article [role="doc-subtitle"] {
+  font-weight: 700;
   --tw-text-opacity: 1;
-  color: rgba(139, 139, 139, var(--tw-text-opacity));
+  color: rgba(82, 82, 82, var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {

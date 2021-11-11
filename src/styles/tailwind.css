@@ -12,7 +12,7 @@ body {
     @apply text-t1 md:text-t3 text-black;
 }
 .article [role="doc-subtitle"] {
-    @apply text-gray-400 md:text-t1;
+    @apply text-gray-500 md:text-t1 font-bold;
 }
 .article p {
     @apply leading-relaxed;
