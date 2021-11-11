@@ -8,10 +8,12 @@
 	import WhatsappEnquiry from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
 	import ImportantSharing from '$lib/zoom/one-on-one/important-sharing.svelte'
 	import AfterClassRevisionModule from '$lib/zoom/one-on-one/after-class-revision-module.svelte'
+	import {avoidMultipleVideoPlay} from "$lib/action/avoid-multiple-video-play";
+
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="article mx-auto p-4 max-w-screen-lg">
+<div class="article mx-auto p-4 max-w-screen-lg" use:avoidMultipleVideoPlay>
 	<h1>{$_(slug)}</h1>
 	<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 	{#if $locale === 'hk'}
