@@ -1,6 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	import {locale, _} from 'svelte-i18n'
+	import Head from '$lib/head.svelte'
 </script>
 
 <script>
@@ -65,6 +66,4 @@
 	</div>
 </div>
 
-<svelte:head>
-	<title>{$_('one_on_one')}</title>
-</svelte:head>
+<Head title={$_('one_on_one')}/>
