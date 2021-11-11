@@ -28,7 +28,13 @@
 <ZoomNav/>
 <main>
 	{#if $navigating}
-		<div in:scale class="fixed top-0 inset-x-0 h-2 bg-red-500 transform duration-700 origin-left transition-transform"></div>
+		<div in:scale={{duration: 1500}} class="fixed top-0 inset-x-0 h-2 bg-red-500 transform duration origin-left transition-transform"></div>
 	{/if}
 	<slot />
 </main>
+
+<style>
+	.duration {
+			transition-duration: 1500ms;
+	}
+</style>

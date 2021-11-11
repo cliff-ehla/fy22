@@ -21,7 +21,7 @@
 			{:else}
 				<p>👉 Currently only open to subscription for one-on-one class, big class or small-group class students at a special price of HK$30 per set. Study time for each set: one month.</p>
 			{/if}
-			<Whatsapp/>
+			<Whatsapp powerful/>
 		</div>
 	{/if}
 </div>
