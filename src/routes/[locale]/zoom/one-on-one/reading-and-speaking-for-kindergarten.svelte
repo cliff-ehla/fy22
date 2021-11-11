@@ -51,9 +51,11 @@
 	</div>
 
 	<div class="p-4 bg-gray-200 rounded">
-		<p>對象學生： K2-K3</p>
-		<p>形式：一對一 Zoom</p>
-		<p>課時: 每節課30分鐘</p>
+		<ul class="mb-4">
+			<li>{$_('lesson_target')}： K2-K3</li>
+			<li>{$_('lesson_format')}</li>
+			<li>{$_('lesson_duration_30')}</li>
+		</ul>
 		<WhatsappEnquiry/>
 	</div>
 </div>

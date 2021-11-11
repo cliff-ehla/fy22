@@ -52,7 +52,9 @@
 		{#each ad_list as item}
 			<div class="mb-4">
 				<a class="mb-2 block" href="one-on-one/{item.href}">
-					<img class="rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{item.href}.jpg" alt={item.title_en}>
+					<div class="relative overflow-hidden" style="padding-top: 56%">
+						<img class="absolute inset-0 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{item.href}.jpg" alt={item.title_en}>
+					</div>
 					<h2 class="mt-2 text-blue-500 font-bold text-t1">{item[`title_${$locale}`]}</h2>
 					{#if item.subtitle_hk}
 						<p class="mt-1 text-blue-400 font-bold text-p2">{item[`subtitle_${$locale}`]}</p>
