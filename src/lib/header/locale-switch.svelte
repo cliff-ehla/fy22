@@ -34,7 +34,7 @@
 	<div on:click={() => {visible = false}} transition:fade={{duration: 200, ease: 'linear'}} class="fixed z-10 bg-black opacity-50 inset-0"></div>
 	<div transition:slide={{duration: 350, ease: 'cubicOut'}} class="fixed z-20 bottom-0 inset-x-0 border border-gray-300 rounded-t bg-white border-b border-gray-200">
 		{#each locales as l}
-			<button class="h-12 w-full flex items-center justify-center" on:click={() => {onSwitch(l.key)}}>{l.label}</button>
+			<button class="h-20 w-full text-p2 flex items-center justify-center" on:click={() => {onSwitch(l.key)}}>{l.label}</button>
 		{/each}
 	</div>
 {/if}

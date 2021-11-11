@@ -35,11 +35,12 @@
 	import {_} from "svelte-i18n"
 </script>
 
-<div class="mt-6 mb-4 mx-4 md:mx-auto max-w-screen-lg">
+<div class="mt-6 mb-4 container">
+	<p class="mb-2">{$_('teacher_for_big_small_class')}</p>
 	{#if teacher_list && teacher_list.length}
 		<div class="flex overflow-auto">
 			{#each teacher_list as tutor}
-				<a href="tutor/{tutor.tutor_id}" class="w-20 sm:w-28 mr-2 sm:mr-4">
+				<a href="tutor/{tutor.tutor_id}" class="w-16 sm:w-20 mr-2 sm:mr-4">
 					<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
 					<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
 				</a>

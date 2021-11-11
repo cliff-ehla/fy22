@@ -7,9 +7,9 @@
 </script>
 
 <div class="flex items-start">
-	<div class="flex-shrink-0 w-20 h-20 rounded-full bg-cover bg-center" style="background-image: url({teacher.profile_pic})"></div>
+	<div class="flex-shrink-0 md:w-20 md:h-20 w-16 h-16 rounded-full bg-cover bg-center" style="background-image: url({teacher.profile_pic})"></div>
 	<div class="ml-2 md:ml-4">
 		<p class="font-bold">{teacher.display_name}</p>
-		<p class="text-gray-500">{@html teacher.description}</p>
+		<p class="text-gray-500 text-sm leading-tight">{@html teacher.subtitle}</p>
 	</div>
 </div>
