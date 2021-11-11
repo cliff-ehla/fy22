@@ -14,7 +14,7 @@
 		<p>Parents can choose to subscribe, at a very low fee, the 💖After-class Revision Module which is unparalleled in the market.  It largely boosts the learning effectiveness. </p>
 	{/if}
 	{#if show_price}
-		<div class="bg-brown-100 rounded p-2 text-sm mb-4">
+		<div class="bg-brown-100 rounded p-2 mb-4">
 			{#if $locale === 'hk'}
 				<p>👉 目前只開放給報讀「一對一」、「大班課」或「小組課」的學生家長以特價每套HK$30訂閱。每套學習時間一個月。</p>
 			{:else}
