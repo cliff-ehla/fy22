@@ -1,6 +1,5 @@
 <script>
-	import Icon from '$lib/ui/icon.svelte'
-	import {_} from 'svelte-i18n'
+	import {_, locale} from 'svelte-i18n'
 	import Whatsapp from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
 
 	export let show_price
@@ -16,7 +15,11 @@
 	</ul>
 	{#if show_price}
 		<div class="p-2 bg-brown-100 rounded mb-4">
-			<b>公開零售價：每月訂閱費HK$168</b>
+			{#if $locale === 'hk'}
+				<b>公開零售價：每月訂閱費HK$168</b>
+			{:else}
+				<b>Retail price：HK$168 monthly</b>
+			{/if}
 			<p class="underline">{$_('vocab_module.order.title')}</p>
 			<ul>
 				{#each [1,2] as i}

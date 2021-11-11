@@ -13,8 +13,9 @@
 		<p class="mb-4">👉避免浪費錢❗ 浪費時間❗你需要睇睇以下短片。</p>
 		<p class="mb-4">👉睇完呢條片，你會明白為什麼之前補習英文，補極都唔得嘅原因；以及要怎麼做，先可以有真正嘅成效？</p>
 	{/if}
+	<video class="max-w-screen-sm" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video5.mp4"></video>
 	{#if show_price}
-		<div class="bg-brown-100 rounded p-2 mb-4">
+		<div class="bg-brown-100 rounded p-2 mt-4">
 			{#if $locale === 'hk'}
 				<p>👉 目前只開放給報讀「一對一」、「大班課」或「小組課」的學生家長以特價每套HK$30訂閱。每套學習時間一個月。</p>
 			{:else}
@@ -23,5 +24,4 @@
 			<Whatsapp powerful/>
 		</div>
 	{/if}
-	<video class="max-w-screen-sm" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video5.mp4"></video>
 </div>

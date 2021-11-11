@@ -13,8 +13,9 @@
 		<h2 class="mb-4">After class revision module</h2>
 		<p>Parents can choose to subscribe, at a very low fee, the 💖After-class Revision Module which is unparalleled in the market.  It largely boosts the learning effectiveness. </p>
 	{/if}
+	<video class="max-w-screen-sm" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video4.mp4"></video>
 	{#if show_price}
-		<div class="bg-brown-100 rounded p-2 mb-4">
+		<div class="bg-brown-100 rounded p-2 mt-4">
 			{#if $locale === 'hk'}
 				<p>👉 目前只開放給報讀「一對一」、「大班課」或「小組課」的學生家長以特價每套HK$30訂閱。每套學習時間一個月。</p>
 			{:else}
@@ -23,5 +24,4 @@
 			<Whatsapp/>
 		</div>
 	{/if}
-	<video class="max-w-screen-sm" controls src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/video4.mp4"></video>
 </div>
