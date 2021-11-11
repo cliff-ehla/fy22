@@ -9,10 +9,11 @@
 	import VocabFeature from '$lib/zoom/one-on-one/vocab-feature.svelte'
 	import ImportantSharing from '$lib/zoom/one-on-one/important-sharing.svelte'
 	import WhatsappEnquiry from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
+	import {avoidMultipleVideoPlay} from "$lib/action/avoid-multiple-video-play";
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4 article">
+<div class="p-4 article" use:avoidMultipleVideoPlay>
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		<p>(L1-L4)</p>

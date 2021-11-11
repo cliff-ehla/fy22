@@ -6,10 +6,11 @@
 	import {_, locale} from 'svelte-i18n'
 	import {page} from '$app/stores'
 	import WhatsappEnquiry from '$lib/zoom/one-on-one/whatsapp-enquiry.svelte'
+	import {avoidMultipleVideoPlay} from "$lib/action/avoid-multiple-video-play";
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4 article">
+<div class="p-4 article" use:avoidMultipleVideoPlay>
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		{#if $locale === 'hk'}
