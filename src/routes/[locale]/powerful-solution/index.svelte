@@ -25,11 +25,11 @@
 	</div>
 
 	<div class="p-4 sm:p-8 bg-gray-200">
-		<AfterClassRevisionModule/>
+		<AfterClassRevisionModule show_price/>
 	</div>
 
 	<div class="p-4 sm:p-8">
-		<ExamTrainingPack/>
+		<ExamTrainingPack show_price/>
 	</div>
 </div>
 
