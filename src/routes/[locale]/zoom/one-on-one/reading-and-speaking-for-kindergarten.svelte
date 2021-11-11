@@ -11,7 +11,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="mx-auto p-4 max-w-screen-lg">
+<div class="article mx-auto p-4 max-w-screen-lg">
 	<h1>{$_(slug)}</h1>
 	<img class="rounded my-4" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg" alt="banner">
 	{#if $locale === 'hk'}
@@ -63,15 +63,3 @@
 <svelte:head>
 	<title>{$_(slug)}</title>
 </svelte:head>
-
-<style>
-    h1 {
-        @apply mb-4 font-bold text-t1;
-    }
-    p {
-        @apply mb-6 text-gray-700 leading-relaxed;
-    }
-    li {
-		    @apply mb-1;
-    }
-</style>
