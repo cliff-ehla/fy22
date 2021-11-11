@@ -14,10 +14,10 @@
 	<meta name="description" content="{description}" />
 	<meta name="keywords" content="{keywords}" />
 
+	<meta property="og:title" content="{title} | EHLA">
+	<meta property="og:site_name" content={$_('site_title')}>
 	<meta property="og:description" content="{description}">
 	<meta property="og:image" content="{image}">
-	<meta property="og:site_name" content={$_('site_title')}>
-	<meta property="og:title" content="{title}">
 	<meta property="og:url" content="https://{$page.host}{$page.path}">
 
 </svelte:head>
