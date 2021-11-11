@@ -1,8 +1,4 @@
 {
-  "whatsapp": {
-    "title": "報名查詢",
-    "desc": "3050專綫whatsapp"
-  },
   "zoom": {
     "title": "外籍老師Zoom課堂",
     "small_class": "小組課",
@@ -34,5 +30,13 @@
     "p3": "課後:應試聆聽練習＋輔導*",
     "p4": "課後:寫作練習＋輔導*",
     "note": "配備香港正規日校資深老師用雙語(英語＋廣東話)教學輔導視頻，確保學生在外籍老師Zoom課堂上可以把握時間和機會在純英文環境中聽課與會話；但課堂後在家可以得到老師雙語輔導，確保能夠完全吸收及消化知識點。 \n"
-  }
+  },
+  "reading-and-speaking-for-kindergarten": "小精英級K班課程",
+  "english-language-leap-programme": "補底增強(特製) 英文躍升計劃",
+  "exam-prep-intensive-english-programme": "呈分試英文特訓外教課程",
+  "story-telling-and-speaking": "英文故事閱讀與會話課堂",
+  "elite-creative-writing-class": "精英躍升英文寫作課程",
+  "reading-and-speaking-elite-programme": "精英閱讀與主題對談",
+  "reading-writing-and-speaking-bridging-uk": "閱讀、寫作與主題對話",
+  "enquiry": "報名查詢"
 }
