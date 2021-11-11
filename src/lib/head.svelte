@@ -18,6 +18,6 @@
 	<meta property="og:image" content="{image}">
 	<meta property="og:site_name" content={$_('site_title')}>
 	<meta property="og:title" content="{title}">
-	<meta property="og:url" content="{$page.host}{$page.path}">
+	<meta property="og:url" content="https://{$page.host}{$page.path}">
 
 </svelte:head>
