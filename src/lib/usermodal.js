@@ -1,4 +1,6 @@
-const base = 'https://usermodel-dev.ehlacademy.org/v1'
+import {variables} from "$lib/env";
+
+const base = variables.api_base + '/v1'
 
 export async function usermodel (request, resource, data) {
 	const res = await fetch(`${base}${resource}`, {

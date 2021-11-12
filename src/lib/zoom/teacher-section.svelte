@@ -23,6 +23,6 @@
 	</div>
 	<div class="mt-4 sm:mt-8">
 		<p class="font-bold mb-2">About {teacher.display_name}</p>
-		<p class="text-gray-500">{@html teacher.description}</p>
+		<p class="text-gray-500 leading-relaxed">{@html teacher.description}</p>
 	</div>
 </div>
