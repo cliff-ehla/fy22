@@ -3,7 +3,7 @@ const base = variables.api_base + '/v1'
 import {logger} from "$lib/logger";
 
 export async function usermodel (request, resource, data) {
-	logger.error('[TEST] This is a testing error only')
+	logger.error('[TEST] This is a testing error only') // TODO until i get the way how error could be prompt to slack
 	const res = await fetch(`${base}${resource}`, {
 		method: request.method,
 		headers: {
