@@ -3,7 +3,7 @@ const base = variables.api_base + '/v1'
 import {logger} from "$lib/logger";
 
 export async function usermodel (request, resource, data) {
-	logger.info('request: ' + resource)
+	logger.error('[TEST] This is a testing error only')
 	const res = await fetch(`${base}${resource}`, {
 		method: request.method,
 		headers: {
