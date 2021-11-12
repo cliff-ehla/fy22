@@ -8,6 +8,7 @@
 	import ExamTrainingPack from '$lib/zoom/one-on-one/exam-training-pack.svelte'
 	import KClassRevisionModule from '$lib/zoom/one-on-one/k-class-revision-module.svelte'
 	import {avoidMultipleVideoPlay} from "$lib/action/avoid-multiple-video-play";
+	import Head from '$lib/head.svelte'
 	import {_} from 'svelte-i18n'
 </script>
 
@@ -42,6 +43,4 @@
 	</div>
 </div>
 
-<svelte:head>
-	<title>{$_('powerful_solution.title')}</title>
-</svelte:head>
+<Head title={$_('powerful_solution.title')}/>

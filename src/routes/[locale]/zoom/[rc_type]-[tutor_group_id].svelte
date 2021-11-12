@@ -25,11 +25,10 @@
 
 <script>
 	import dayjs from 'dayjs'
-
+	import Head from '$lib/head.svelte'
+	import TeacherSection from '$lib/zoom/teacher-section.svelte'
 	export let lesson
 	export let tutor
-
-	import TeacherSection from '$lib/zoom/teacher-section.svelte'
 </script>
 
 <div class="bg-gray-100 md:pt-8">
@@ -60,6 +59,4 @@
 	</div>
 </div>
 
-<svelte:head>
-	<title>{lesson.name} - {lesson.rc_type} class</title>
-</svelte:head>
+<Head title={lesson.name}/>

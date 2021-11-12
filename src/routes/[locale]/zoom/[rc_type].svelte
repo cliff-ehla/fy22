@@ -30,6 +30,7 @@
 	export let teacher_list
 	export let classroom
 
+	import Head from '$lib/head.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
 	import {page} from '$app/stores'
 	import {_} from "svelte-i18n"
@@ -57,6 +58,4 @@
 	{/if}
 </div>
 
-<svelte:head>
-	<title>{$_(`${$page.params.rc_type}_class`)}</title>
-</svelte:head>
+<Head title={$_(`${$page.params.rc_type}_class`)}/>
