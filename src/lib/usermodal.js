@@ -1,8 +1,9 @@
 import {variables} from "$lib/env";
-
 const base = variables.api_base + '/v1'
+import {logger} from "$lib/logger";
 
 export async function usermodel (request, resource, data) {
+	logger.info('request: ' + resource)
 	const res = await fetch(`${base}${resource}`, {
 		method: request.method,
 		headers: {
