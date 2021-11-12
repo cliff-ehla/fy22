@@ -23,7 +23,12 @@
 		tracesSampleRate: 1.0,
 	});
 
-	myUndefinedFunction();
+	try {
+		myUndefinedFunction();
+	} catch (e) {
+		console.error(e)
+	}
+
 
 	addMessages('en', en)
 	addMessages('hk', hk)
