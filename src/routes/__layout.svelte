@@ -26,7 +26,7 @@
 </script>
 
 <ZoomNav/>
-<div class="bg-yellow-500 fixed top-0 inset-x-0 font-bold text-xs text-center">Dev</div>
+<div class="bg-yellow-500 fixed top-0 inset-x-0 font-bold text-xs text-center">Dev test</div>
 <main>
 	{#if $navigating}
 		<div in:scale={{duration: 1500}} class="fixed top-0 inset-x-0 h-2 bg-red-500 transform duration origin-left transition-transform"></div>
