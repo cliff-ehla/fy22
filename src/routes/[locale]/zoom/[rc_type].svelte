@@ -64,6 +64,8 @@
 		{#each classroom as c}
 			<LessonPreview item={c}/>
 		{/each}
+	{:else}
+		<p class="p-4 text-gray-400">No data</p>
 	{/if}
 </div>
 
