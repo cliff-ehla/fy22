@@ -59,5 +59,11 @@
   "lesson_duration_30": "Lesson duration: 30 minutes",
   "lesson_duration_40": "Lesson duration: 40 minutes",
   "lesson_duration_30_40": "Lesson duration: 30/40 minutes",
-  "teacher_for_big_small_class": "Teachers for Big/Small Class:"
+  "teacher_for_big_small_class": "Teachers for Big/Small Class:",
+  "class_upon_request": "Class upon request",
+  "teacher": "Teacher",
+  "4_people_class": "4-person class",
+  "20_people_class": "20-person class",
+  "unlimited_people_class": "No student number limit",
+  "level": "Difficulty"
 }

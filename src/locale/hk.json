@@ -59,5 +59,11 @@
   "lesson_duration_30": "課時: 每節課30分鐘",
   "lesson_duration_40": "課時: 每節課40分鐘",
   "lesson_duration_30_40": "課時: 每節課30/40分鐘",
-  "teacher_for_big_small_class": "大班/小組課 任教老師:"
+  "teacher_for_big_small_class": "大班/小組課 任教老師:",
+  "class_upon_request": "可應要求開班",
+  "teacher": "老師",
+  "4_people_class": "4人班",
+  "20_people_class": "20人班",
+  "unlimited_people_class": "人數不限",
+  "level": "程度"
 }
