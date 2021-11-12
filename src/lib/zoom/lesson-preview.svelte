@@ -10,25 +10,29 @@
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
-		<p class="text-blue-500 text-xs sm:text-sm sm:text">{$_(item.rc_tag)}</p>
+		<p class="text-blue-500 text-xs sm:text-sm sm:text">{$_(item.sub_cat)}</p>
 		{#if item.name_alter}
 			<p class="font-bold text-sm sm:text">{$locale === 'hk' ? item.name_alter : item.name}</p>
 		{/if}
 		{#if item.rc_level}
-			<p class="font-bold text-sm sm:text">{$_('level')}: {item.rc_level}</p>
+			<p class="text-sm sm:text">{$_('level')}: {item.rc_level}</p>
 		{/if}
-		<p class="text-gray-500 text-xs sm:text-sm mt-2">
-			{#if Number(item.student_size) === 9999}
-				{$_('unlimited_people_class')}
-			{:else if item.rc_type === 'big'}
-				{$_('20_people_class')}
-			{:else if item.rc_type === 'small'}
-				{$_('4_people_class')}
-			{/if}
-		</p>
-		<p class="text-gray-500 text-xs sm:text-sm">{$_('teacher')}: {item.tutor_name}</p>
+<!--		<p class="text-sm my-2">{@html $locale === 'hk' ? item.description_alter : item.description}</p>-->
+		<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
 		<div class="mt-auto">
-			<p class="mt-2 text-blue-500 text-sm sm:text">
+			<div class="flex mb-1">
+				<div class="rounded-sm bg-blue-500 text-white text-xs px-4 py-1 inline-block">
+					{#if Number(item.student_size) === 9999}
+						{$_('unlimited_people_class')}
+					{:else if item.rc_type === 'big'}
+						{$_('20_people_class')}
+					{:else if item.rc_type === 'small'}
+						{$_('4_people_class')}
+					{/if}
+				</div>
+				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{item.lang_type}</div>
+			</div>
+			<p class="text-blue-500 text-sm sm:text">
 				{item.start_date ? dayjs(item.start_date).format('DD MMM YYYY HH:mma') : $_('class_upon_request')}
 			</p>
 		</div>

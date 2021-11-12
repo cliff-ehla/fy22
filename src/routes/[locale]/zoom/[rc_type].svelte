@@ -20,11 +20,17 @@
 			rc_tag: page.query.rc_tag || 'all'
 		})
 
+		const res3 = await http.get(fetch, '/list_registrable_classroom_tag', {
+			rc_type
+		})
+		console.log(res3)
+
 		if (res.success && res2.success) {
 			return {
 				props: {
 					teacher_list: res.data,
-					classroom: res2.data
+					classroom: res2.data,
+					tag_list: res3.data.rc_tags
 				}
 			}
 		}
@@ -37,6 +43,7 @@
 
 <script>
 	export let teacher_list
+	export let tag_list
 	export let classroom
 
 	import Head from '$lib/head.svelte'
@@ -58,6 +65,18 @@
 		</div>
 	{/if}
 </div>
+
+{#if tag_list && tag_list.length}
+	<div class="container">
+		<div class="overflow-auto flex mt-4">
+			{#each tag_list as _tag}
+				<a href="?tag={_tag.toLowerCase()}"
+				   class="inline-block text-sm {$page.query.tag === _tag.toLowerCase() ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
+				>{$_(_tag)}</a>
+			{/each}
+		</div>
+	</div>
+{/if}
 
 <div class="mt-4 sm:pt-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg">
 	{#if classroom && classroom.length}
