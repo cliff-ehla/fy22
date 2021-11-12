@@ -17,8 +17,11 @@
 					tutor: res2.data
 				}
 			}
-		} else {
-			console.log('fail', res.debug)
+		}
+
+		return {
+			error: 'The classroom you are searching for do not exist',
+			status: 400
 		}
 	}
 </script>

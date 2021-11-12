@@ -2,12 +2,21 @@
 	import {http} from "$lib/http";
 
 	export const load = async ({fetch, page}) => {
+		const accepted_rc_type = ['big', 'small']
+		const rc_type = page.params.rc_type
+		if (!accepted_rc_type.includes(rc_type)) {
+			return {
+				redirect: 'big',
+				status: 302
+			}
+		}
+
 		const res = await http.get(fetch, '/list_zoom_tutor', {
-			rc_type: page.params.rc_type
+			rc_type
 		})
 
 		const res2 = await http.post(fetch, '/list_registrable_classroom', {
-			rc_type: page.params.rc_type,
+			rc_type,
 			rc_tag: page.query.rc_tag || 'all'
 		})
 
@@ -22,7 +31,7 @@
 		return {
 			error: new Error(JSON.stringify(res.debug)),
 			status: 400
-		};
+		}
 	}
 </script>
 

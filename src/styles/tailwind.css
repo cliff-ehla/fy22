@@ -29,3 +29,6 @@ body {
 .container {
     @apply mx-auto max-w-screen-lg px-4;
 }
+.button {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400;
+}
