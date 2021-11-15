@@ -10,7 +10,7 @@
 	import {navigating} from "$app/stores";
 	import {scale} from 'svelte/transition'
 	import dayjs from "dayjs";
-	import 'dayjs/locale/zh-hk';
+	import 'dayjs/locale/zh-hk.js';
 
 	addMessages('en', en)
 	addMessages('hk', hk)
