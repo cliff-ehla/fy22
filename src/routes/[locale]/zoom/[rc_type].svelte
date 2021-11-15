@@ -4,6 +4,7 @@
 	export const load = async ({fetch, page}) => {
 		const accepted_rc_type = ['big', 'small']
 		const rc_type = page.params.rc_type
+		const rc_tag = page.query.get('rc_tag') || 'all'
 		if (!accepted_rc_type.includes(rc_type)) {
 			return {
 				redirect: 'big',
@@ -17,7 +18,7 @@
 
 		const res2 = await http.post(fetch, '/list_registrable_classroom', {
 			rc_type,
-			rc_tag: page.query.rc_tag || 'all'
+			rc_tag
 		})
 
 		const res3 = await http.get(fetch, '/list_registrable_classroom_tag', {
@@ -69,7 +70,7 @@
 	<div class="container">
 		<div class="overflow-auto flex mt-4">
 			{#each tag_list as _tag}
-				<a href="?tag={_tag.toLowerCase()}"
+				<a href="?rc_tag={_tag.toLowerCase()}"
 				   class="inline-block text-sm {$page.query.tag === _tag.toLowerCase() ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
 				>{$_(_tag)}</a>
 			{/each}
