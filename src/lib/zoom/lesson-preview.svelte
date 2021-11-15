@@ -1,7 +1,9 @@
 <script>
 	export let item
 	import dayjs from "dayjs";
+	import utc from "dayjs/plugin/utc";
 	import {locale, _} from 'svelte-i18n'
+	dayjs.extend(utc)
 </script>
 
 <a href="/{$locale}/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
@@ -32,7 +34,7 @@
 				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
-				{item.start_date ? dayjs(item.start_date).format('DD MMM YYYY h:mma') : $_('class_upon_request')}
+				{item.start_date ? dayjs.utc(item.start_date).local().format('DD MMM YYYY h:mma') : $_('class_upon_request')}
 			</p>
 		</div>
 	</div>
