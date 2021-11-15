@@ -13,7 +13,7 @@
 	const slug = $page.path.split('/').pop()
 </script>
 
-<div class="p-4 article" use:avoidMultipleVideoPlay>
+<div class="p-4 article container" use:avoidMultipleVideoPlay>
 	<div class="mb-8">
 		<h1>{$_(slug)}</h1>
 		<p>(L1-L4)</p>
