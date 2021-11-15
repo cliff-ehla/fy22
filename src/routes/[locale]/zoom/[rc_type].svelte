@@ -77,7 +77,7 @@
 	</div>
 {/if}
 
-<div class="mt-4 sm:pt-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg">
+<div class="mt-4 sm:pt-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg grid gap-4">
 	{#if classroom && classroom.length}
 		{#each classroom as c}
 			<LessonPreview item={c}/>

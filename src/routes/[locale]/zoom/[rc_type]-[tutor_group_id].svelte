@@ -27,6 +27,7 @@
 </script>
 
 <script>
+	import {_, locale} from 'svelte-i18n'
 	import dayjs from 'dayjs'
 	import Head from '$lib/head.svelte'
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
@@ -44,14 +45,14 @@
 </div>
 
 <div class="bg-white max-w-screen-lg mx-auto p-4">
-	<p class="text-blue-500">{lesson.rc_tag}</p>
+	<p class="text-blue-500">{$_(lesson.rc_tag)}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
-	<p class="text-gray-500 text-sm mt-2">Recommended level: {lesson.r_level}</p>
-	<p class="text-gray-500 text-sm">Teacher: {lesson.tutor_name}</p>
+	<p class="text-gray-500 text-sm mt-2">{$_('recommended_level')}: {lesson.rc_level}</p>
+	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 
 	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{lesson.rc_type}</div>
 
-	<p class="mt-4 text-gray-500">{lesson.article_ori}</p>
+	<p class="mt-4 text-gray-500">{$locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">
