@@ -11,6 +11,7 @@
 	import {scale} from 'svelte/transition'
 	import dayjs from "dayjs";
 	import 'dayjs/locale/zh-hk.js';
+	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
 
 	addMessages('en', en)
 	addMessages('hk', hk)
@@ -35,13 +36,9 @@
 <ZoomNav/>
 <main>
 	{#if $navigating}
-		<div in:scale={{duration: 1500}} class="fixed top-0 inset-x-0 h-2 bg-red-500 transform duration origin-left transition-transform"></div>
+		<div class="fixed inset-x-0 top-0 z-50">
+			<LoadingBar/>
+		</div>
 	{/if}
 	<slot />
 </main>
-
-<style>
-	.duration {
-			transition-duration: 1500ms;
-	}
-</style>
