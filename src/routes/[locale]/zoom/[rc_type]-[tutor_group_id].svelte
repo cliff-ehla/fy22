@@ -42,7 +42,7 @@
 	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path}); max-width: 720px"></div>
 	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
 		<div class="max-w-screen-lg mx-auto w-full px-4">
-			{dayjs.utc(lesson.start_date).local().format('DD MMM YYYY h:mma')}
+			{dayjs.utc(lesson.start_date).local().format('DD MMM YYYY (ddd) h:mma')}
 		</div>
 	</div>
 </div>
@@ -51,6 +51,7 @@
 	<p class="text-blue-500">{$_(lesson.rc_tag)}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
 	<p class="text-gray-500 text-sm mt-2">{$_('recommended_level')}: {lesson.rc_level}</p>
+	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 
 	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">
@@ -62,6 +63,7 @@
 			{$_('4_people_class')}
 		{/if}
 	</div>
+	<div class="bg-purple-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{$_(lesson.lang_type)}</div>
 
 	<p class="mt-4 text-gray-500">{$locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>

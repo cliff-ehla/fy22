@@ -82,5 +82,7 @@
   "tutor_video_demo": "Lesson demo",
   "about": "About",
   "tutor_lesson": "Tutor's classes",
-  "recommended_level": "Recommended Level"
+  "recommended_level": "Recommended Level",
+  "minutes": "Minutes",
+  "duration": "Duration"
 }

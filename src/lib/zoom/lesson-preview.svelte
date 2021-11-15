@@ -11,14 +11,13 @@
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
-		<p class="text-blue-500 text-xs sm:text-sm sm:text">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
+		<p class="text-blue-500 text-sm sm:text">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
 		{#if item.name_alter}
 			<p class="font-bold text-sm sm:text">{$locale === 'hk' ? item.name_alter : item.name}</p>
 		{/if}
 		{#if item.rc_level}
 			<p class="text-sm sm:text">{$_('level')}: {item.rc_level}</p>
 		{/if}
-<!--		<p class="text-sm my-2">{@html $locale === 'hk' ? item.description_alter : item.description}</p>-->
 		<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
 		<div class="mt-auto">
 			<div class="flex mb-1">
@@ -34,7 +33,7 @@
 				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
-				{item.start_date ? dayjs.utc(item.start_date).local().format('DD MMM YYYY h:mma') : $_('class_upon_request')}
+				{item.start_date ? dayjs.utc(item.start_date).local().format('DD MMM YYYY (ddd) h:mma') : $_('class_upon_request')}
 			</p>
 		</div>
 	</div>
