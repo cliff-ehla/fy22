@@ -29,17 +29,20 @@
 <script>
 	import {_, locale} from 'svelte-i18n'
 	import dayjs from 'dayjs'
+	import utc from 'dayjs/plugin/utc'
 	import Head from '$lib/head.svelte'
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
+	dayjs.extend(utc)
 	export let lesson
 	export let tutor
+	console.log(lesson)
 </script>
 
 <div class="bg-gray-100 md:pt-8">
 	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path}); max-width: 720px"></div>
 	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
 		<div class="max-w-screen-lg mx-auto w-full px-4">
-			{dayjs(lesson.start_time).format('DD MMM YYYY HH:mma')}
+			{dayjs.utc(lesson.start_date).local().format('DD MMM YYYY h:mma')}
 		</div>
 	</div>
 </div>
@@ -50,7 +53,15 @@
 	<p class="text-gray-500 text-sm mt-2">{$_('recommended_level')}: {lesson.rc_level}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 
-	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{lesson.rc_type}</div>
+	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">
+		{#if Number(lesson.student_size) === 9999}
+			{$_('unlimited_people_class')}
+		{:else if lesson.rc_type === 'big'}
+			{$_('20_people_class')}
+		{:else if lesson.rc_type === 'small'}
+			{$_('4_people_class')}
+		{/if}
+	</div>
 
 	<p class="mt-4 text-gray-500">{$locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
