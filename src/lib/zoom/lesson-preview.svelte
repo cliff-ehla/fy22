@@ -11,7 +11,7 @@
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
-		<p class="text-blue-500 text-sm sm:text">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
+		<p class="text-blue-500 font-bold text-sm sm:text">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
 		{#if item.name_alter}
 			<p class="font-bold text-sm sm:text">{$locale === 'hk' ? item.name_alter : item.name}</p>
 		{/if}

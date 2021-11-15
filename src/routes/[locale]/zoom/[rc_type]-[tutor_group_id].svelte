@@ -48,9 +48,9 @@
 </div>
 
 <div class="bg-white max-w-screen-lg mx-auto p-4">
-	<p class="text-blue-500">{$_(lesson.rc_tag)}</p>
+	<p class="text-blue-500 font-bold">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
-	<p class="text-gray-500 text-sm mt-2">{$_('recommended_level')}: {$_(lesson.rc_level)}</p>
+	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 
@@ -65,7 +65,7 @@
 	</div>
 	<div class="bg-purple-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{$_(lesson.lang_type)}</div>
 
-	<p class="mt-4 text-gray-500">{$locale === 'hk' ? lesson.description_alter : lesson.description}</p>
+	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">
