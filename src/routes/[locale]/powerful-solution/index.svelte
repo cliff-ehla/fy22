@@ -16,7 +16,7 @@
 			<p class="text-p2 md:text-p3">{$_('powerful_solution.desc')}</p>
 		</div>
 
-		<div class="grid grid-cols-2 gap-4 md:gap-8">
+		<div class="grid md:grid-cols-2 gap-8">
 			<a href="powerful-solution/vocabulary-spelling-booster">
 				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/reading-and-speaking-for-kindergarten.jpg" alt="img">
 				<h2>{$_('vocab_module.title')}</h2>

@@ -49,7 +49,7 @@
 </script>
 
 <div class="p-4 mx-auto max-w-screen-lg">
-	<div class="grid grid-cols-1 gap-4">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 		{#each ad_list as item}
 			<div class="mb-4">
 				<a class="mb-2 block" href="one-on-one/{item.href}">
