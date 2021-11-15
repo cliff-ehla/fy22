@@ -23,7 +23,6 @@
 		const res3 = await http.get(fetch, '/list_registrable_classroom_tag', {
 			rc_type
 		})
-		console.log(res3)
 
 		if (res.success && res2.success) {
 			return {

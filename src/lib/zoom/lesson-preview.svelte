@@ -2,7 +2,6 @@
 	export let item
 	import dayjs from "dayjs";
 	import {locale, _} from 'svelte-i18n'
-	console.log(item)
 </script>
 
 <a href="/{$locale}/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
@@ -30,7 +29,7 @@
 						{$_('4_people_class')}
 					{/if}
 				</div>
-				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{item.lang_type}</div>
+				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
 				{item.start_date ? dayjs(item.start_date).format('DD MMM YYYY HH:mma') : $_('class_upon_request')}

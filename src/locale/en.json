@@ -1,5 +1,6 @@
 {
   "site_title": "NET Zoom Class",
+  "site_slogan": "EHLA | Goes beyond your expectations!",
   "small_class": "Small class",
   "big_class": "Big class",
   "one_on_one": "1-on-1",
@@ -76,5 +77,10 @@
   "Creative writing": "Elite writing",
   "Storytelling": "Show & Tell",
   "EHLA Storytelling": "Story reading",
-  "all": "All"
+  "all": "All",
+  "Bilingual class": "Bilingual",
+  "tutor_video_introduction": "Introduction",
+  "tutor_video_demo": "Lesson demo",
+  "about": "About",
+  "tutor_lesson": "Tutor's classes"
 }

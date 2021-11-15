@@ -4,7 +4,7 @@
 
 	export let image = "https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/ehla-zoom-key-image.jpeg";
 	export let title = "";
-	export let description = "EHLA | Goes beyond your expectations!";
+	export let description = $_('site_slogan');
 	export let keywords = "online-lesson";
 </script>
 

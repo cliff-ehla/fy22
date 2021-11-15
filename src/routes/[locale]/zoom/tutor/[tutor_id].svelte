@@ -22,6 +22,7 @@
 	export let tutor
 	export let lessons
 
+	import {_} from 'svelte-i18n'
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
 </script>
@@ -34,7 +35,7 @@
 
 <div class="bg-gray-100 border-t border-gray-300">
 	<div class="max-w-screen-lg mx-auto p-4 md:px-4 md:pt-8 md:pb-12">
-		<p class="font-bold mb-4 md:mb-86">Classes are now opening in this month</p>
+		<p class="font-bold mb-4 md:mb-86">{$_('tutor_lesson')}</p>
 		{#if lessons && lessons.length}
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 				{#each lessons as i}

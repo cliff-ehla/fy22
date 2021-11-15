@@ -1,5 +1,6 @@
 {
   "site_title": "外籍老師Zoom課堂",
+  "site_slogan": "EHLA | 超越您所想！",
   "small_class": "小組課",
   "big_class": "大班課",
   "one_on_one": "一對一",
@@ -76,5 +77,10 @@
   "Creative writing": "Elite writing",
   "Storytelling": "Show & Tell",
   "EHLA Storytelling": "Story reading",
-  "all": "All"
+  "all": "All",
+  "Bilingual class": "雙語",
+  "tutor_video_introduction": "自我介紹",
+  "tutor_video_demo": "堂上片段",
+  "about": "關於",
+  "tutor_lesson": "老師的課堂"
 }
