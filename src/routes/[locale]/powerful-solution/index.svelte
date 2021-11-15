@@ -18,21 +18,21 @@
 
 		<div class="grid md:grid-cols-2 gap-8">
 			<a href="powerful-solution/vocabulary-spelling-booster">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/reading-and-speaking-for-kindergarten.jpg" alt="img">
+				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/vocabulary-spelling-booster.jpg" alt="img">
 				<h2>{$_('vocab_module.title')}</h2>
 				<p>{$_('vocab_module.subtitle')}</p>
 			</a>
 			<a href="powerful-solution/revision-module-for-kid">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/reading-and-speaking-for-kindergarten.jpg" alt="img">
+				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/revision-module-for-kid.jpg" alt="img">
 				<h2>{$_('k3_revision_pack.title')}</h2>
 				<p>{$_('k3_revision_pack.subtitle')}</p>
 			</a>
 			<a href="powerful-solution/after-class-revision">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/reading-and-speaking-for-kindergarten.jpg" alt="img">
+				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/after-class-revision.jpg" alt="img">
 				<h2>{$_('after_class_revision.title')}</h2>
 			</a>
 			<a href="powerful-solution/exam-prep-revision-tutorial-pack">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/reading-and-speaking-for-kindergarten.jpg" alt="img">
+				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/exam-prep-revision-tutorial-pack.jpg" alt="img">
 				<h2>{$_('exam_training_pack.title')}</h2>
 				<p>{$_('exam_training_pack.subtitle')}</p>
 			</a>
