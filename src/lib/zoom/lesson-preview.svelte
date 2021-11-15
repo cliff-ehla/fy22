@@ -33,7 +33,7 @@
 				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
-				{item.start_date ? dayjs.utc(item.start_date).local().format('DD MMM YYYY (ddd) h:mma') : $_('class_upon_request')}
+				{item.start_date ? dayjs.utc(item.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma') : $_('class_upon_request')}
 			</p>
 		</div>
 	</div>

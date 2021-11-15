@@ -4,10 +4,10 @@
 	export const load = async ({fetch, page}) => {
 		const accepted_rc_type = ['big', 'small']
 		const rc_type = page.params.rc_type
-		const rc_tag = page.query.get('rc_tag') || 'all'
-		if (!accepted_rc_type.includes(rc_type)) {
+		const rc_tag = page.query.get('rc_tag')
+		if (!accepted_rc_type.includes(rc_type) || !rc_tag) {
 			return {
-				redirect: 'big',
+				redirect: 'big?rc_tag=all',
 				status: 302
 			}
 		}
@@ -50,7 +50,6 @@
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
 	import {page} from '$app/stores'
 	import {_} from "svelte-i18n"
-	console.log($page.query.get('rc_tag'))
 </script>
 
 <div class="mt-6 mb-4 container">

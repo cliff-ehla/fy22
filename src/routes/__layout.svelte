@@ -9,6 +9,8 @@
 	import {page} from '$app/stores'
 	import {navigating} from "$app/stores";
 	import {scale} from 'svelte/transition'
+	import dayjs from "dayjs";
+	import 'dayjs/locale/zh-hk';
 
 	addMessages('en', en)
 	addMessages('hk', hk)
@@ -21,6 +23,11 @@
 	$: {
 		if ($page.params.locale) {
 			locale.set($page.params.locale)
+			if ($page.params.locale === 'hk') {
+				dayjs.locale('zh-hk')
+			} else {
+				dayjs.locale('en')
+			}
 		}
 	}
 </script>

@@ -42,7 +42,7 @@
 	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path}); max-width: 720px"></div>
 	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
 		<div class="max-w-screen-lg mx-auto w-full px-4">
-			{dayjs.utc(lesson.start_date).local().format('DD MMM YYYY (ddd) h:mma')}
+			{dayjs.utc(lesson.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}
 		</div>
 	</div>
 </div>
