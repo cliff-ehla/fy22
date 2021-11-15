@@ -45,7 +45,7 @@
 				{/each}
 			</div>
 		{:else}
-			<p>No data</p>
+			<p>{$_('no_data')}</p>
 		{/if}
 	</div>
 </div>

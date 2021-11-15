@@ -5,10 +5,9 @@
 	import {addMessages, _, locale} from 'svelte-i18n'
 	import en from '../locale/en.json'
 	import hk from '../locale/hk.json'
-	import {register, init} from 'svelte-i18n'
+	import {init} from 'svelte-i18n'
 	import {page} from '$app/stores'
 	import {navigating} from "$app/stores";
-	import {scale} from 'svelte/transition'
 	import dayjs from "dayjs";
 	import 'dayjs/locale/zh-hk.js';
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
