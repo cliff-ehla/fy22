@@ -84,5 +84,16 @@
   "tutor_lesson": "老師的課堂",
   "recommended_level": "建議程度",
   "minutes": "分鐘",
-  "duration": "課時"
+  "duration": "課時",
+  "6yro-or-below": "6歲或以下",
+  "7yro-to-9yro": "7至9歲",
+  "ks1-of-primary": "初小",
+  "ks2-of-primary": "高小",
+  "p1-p2": "小一/小二",
+  "p2-p3": "小二/小三",
+  "p3-p4": "小三/小四",
+  "p4-p5": "小四/小五",
+  "p5-p6": "小五/小六",
+  "p4-to-p5-exam-prep": "小四至小五適合(呈分試)",
+  "p4-to-p6-exam-prep": "小四至小六適合(呈分試)"
 }

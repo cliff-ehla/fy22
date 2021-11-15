@@ -16,7 +16,7 @@
 			<p class="font-bold text-sm sm:text">{$locale === 'hk' ? item.name_alter : item.name}</p>
 		{/if}
 		{#if item.rc_level}
-			<p class="text-sm sm:text">{$_('level')}: {item.rc_level}</p>
+			<p class="text-sm sm:text">{$_('level')}: {$_(item.rc_level)}</p>
 		{/if}
 		<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
 		<div class="mt-auto">

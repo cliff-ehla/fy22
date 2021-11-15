@@ -84,5 +84,16 @@
   "tutor_lesson": "Tutor's classes",
   "recommended_level": "Recommended Level",
   "minutes": "Minutes",
-  "duration": "Duration"
+  "duration": "Duration",
+  "6yro-or-below": "6yro or below",
+  "7yro-to-9yro": "7yro to 9yro",
+  "ks1-of-primary": "KS1 of Primary",
+  "ks2-of-primary": "KS2 of Primary",
+  "p1-p2": "P1/P2",
+  "p2-p3": "P2/P3",
+  "p3-p4": "P3/P4",
+  "p4-p5": "P4/P5",
+  "p5-p6": "P5/P6",
+  "p4-to-p5-exam-prep": "P4 to P5(Exam Prep)",
+  "p4-to-p6-exam-prep": "P4 to P6(Exam Prep)"
 }
