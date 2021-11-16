@@ -98,5 +98,7 @@
   "p4-to-p5-exam-prep": "P4 to P5(Exam Prep)",
   "p4-to-p6-exam-prep": "P4 to P6(Exam Prep)",
   "no_data": "No data",
-  "other_time_slot": "Other time slot"
+  "other_time_slot": "Other time slot",
+  "show_all": "顯視全部",
+  "show_less": "顯視更少"
 }

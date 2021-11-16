@@ -38,10 +38,12 @@
 	dayjs.extend(utc)
 	export let lesson
 	export let tutor
+	let other_slot_items_limit = true
+	console.log(lesson)
 </script>
 
 <div class="bg-gray-100 md:pt-8">
-	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path}); max-width: 720px"></div>
+	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path_header}); max-width: 720px"></div>
 	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
 		<div class="max-w-screen-lg mx-auto w-full px-4">
 			{dayjs.utc(lesson.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}
@@ -65,17 +67,28 @@
 <div class="bg-gray-100 p-4 border-t border-gray-200">
 	<div class="max-w-screen-lg mx-auto">
 		<h3 class="mb-2 font-bold">{$_('other_time_slot')}</h3>
-		{#each lesson.other_time_slots as slot}
-			<a href="{slot.rc_type}-{slot.tutor_group_id}" class="flex py-2 text-sm border-b border-gray-200 items-center">
-				<div class="flex-1">
-					<p class="text-blue-500">{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
-					<p class="text-gray-400">{$_('teacher')}: {slot.tutor_name}</p>
-					<div class="tag bg-blue-500">{lessonSizeLabel(slot)}</div>
-					<div class="tag bg-purple-500">{$_(slot.is_native_teacher ? 'Native-speaker-teacher-class' : 'Bilingual-class')}</div>
-				</div>
-				<Icon name="right" className="flex-shrink-0 ml-4 w-4 text-gray-400"/>
-			</a>
-		{/each}
+		{#if lesson.other_time_slots > 0}
+			{#each lesson.other_time_slots.slice(0, other_slot_items_limit ? 3: 9999) as slot}
+				<a href="{slot.rc_type}-{slot.tutor_group_id}" class="flex py-2 text-sm border-b border-gray-200 items-center">
+					<div class="flex-1">
+						<p class="text-blue-500">{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
+						<p class="text-gray-400">{$_('teacher')}: {slot.tutor_name}</p>
+						<div class="tag bg-blue-500">{lessonSizeLabel(slot)}</div>
+						<div class="tag bg-purple-500">{$_(slot.is_native_teacher ? 'Native-speaker-teacher-class' : 'Bilingual-class')}</div>
+					</div>
+					<Icon name="right" className="flex-shrink-0 ml-4 w-4 text-gray-400"/>
+				</a>
+			{/each}
+		{:else}
+			<p class="text-gray-400 text-sm">{$_('no_data')}</p>
+		{/if}
+		{#if lesson.other_time_slots.length > 3}
+			<div class="flex justify-center">
+				<button on:click={() => {other_slot_items_limit = !other_slot_items_limit}} class="border border-current text-blue-500 px-4 py-1 leading-none rounded-full hover:bg-blue-500 hover:text-white">
+					{$_(other_slot_items_limit ? 'show_all' : 'show_less')}
+				</button>
+			</div>
+		{/if}
 	</div>
 </div>
 
