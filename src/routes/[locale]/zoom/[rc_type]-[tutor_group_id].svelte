@@ -63,7 +63,7 @@
 </div>
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">
-	<div class="max-w-screen-lg mx-auto">
+	<div class="container">
 		<h3 class="mb-2 font-bold">{$_('other_time_slot')}</h3>
 		{#if lesson.other_time_slots > 0}
 			{#each lesson.other_time_slots.slice(0, other_slot_items_limit ? 3: 9999) as slot}
@@ -96,10 +96,10 @@
 		{#if lesson.related_class.length}
 			{#each lesson.related_class as c}
 				<div class="flex overflow-x-scroll">
-					<div class="w-32 mr-2 flex-shrink-0">
+					<a href={c.rc_type}-{c.tutor_group_id} class="w-32 mr-2 flex-shrink-0">
 						<img class="rounded shadow" src={c.thumbnail_path} alt={c.name}>
 						<p class="text-sm text-gray-500 leading-tight mt-1">{c.name}</p>
-					</div>
+					</a>
 				</div>
 			{/each}
 		{:else}
