@@ -32,10 +32,12 @@
 	import utc from 'dayjs/plugin/utc'
 	import Head from '$lib/head.svelte'
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
+	import {lessonSizeLabel} from "$lib/zoom/lesson-size-label";
+	import Icon from '$lib/ui/icon.svelte'
+
 	dayjs.extend(utc)
 	export let lesson
 	export let tutor
-	console.log(lesson)
 </script>
 
 <div class="bg-gray-100 md:pt-8">
@@ -54,27 +56,27 @@
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 
-	<div class="bg-blue-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">
-		{#if Number(lesson.student_size) === 9999}
-			{$_('unlimited_people_class')}
-		{:else if lesson.rc_type === 'big'}
-			{$_('20_people_class')}
-		{:else if lesson.rc_type === 'small'}
-			{$_('4_people_class')}
-		{/if}
-	</div>
-	<div class="bg-purple-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{$_(lesson.lang_type)}</div>
+	<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+	<div class="tag bg-purple-500">{$_(lesson.lang_type)}</div>
 
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
+</div>
 
-	<h3>Other time slot</h3>
-	{#each lesson.other_time_slots as slot}
-		<div class="py-4">
-			<p>{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
-			<p>Teacher {slot.tutor_name}</p>
-
-		</div>
-	{/each}
+<div class="bg-gray-100 p-4 border-t border-gray-200">
+	<div class="max-w-screen-lg mx-auto">
+		<h3 class="mb-2 font-bold">{$_('other_time_slot')}</h3>
+		{#each lesson.other_time_slots as slot}
+			<a href="{slot.rc_type}-{slot.tutor_group_id}" class="flex py-2 text-sm border-b border-gray-200 items-center">
+				<div class="flex-1">
+					<p class="text-blue-500">{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
+					<p class="text-gray-400">{$_('teacher')}: {slot.tutor_name}</p>
+					<div class="tag bg-blue-500">{lessonSizeLabel(slot)}</div>
+					<div class="tag bg-purple-500">{$_(slot.is_native_teacher ? 'Native-speaker-teacher-class' : 'Bilingual-class')}</div>
+				</div>
+				<Icon name="right" className="flex-shrink-0 ml-4 w-4 text-gray-400"/>
+			</a>
+		{/each}
+	</div>
 </div>
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">

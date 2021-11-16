@@ -3,6 +3,8 @@
 	import dayjs from "dayjs";
 	import utc from "dayjs/plugin/utc";
 	import {locale, _} from 'svelte-i18n'
+	import {lessonSizeLabel} from "$lib/zoom/lesson-size-label";
+
 	dayjs.extend(utc)
 </script>
 
@@ -21,16 +23,8 @@
 		<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
 		<div class="mt-auto">
 			<div class="flex mb-1">
-				<div class="rounded-sm bg-blue-500 text-white text-xs px-4 py-1 inline-block">
-					{#if Number(item.student_size) === 9999}
-						{$_('unlimited_people_class')}
-					{:else if item.rc_type === 'big'}
-						{$_('20_people_class')}
-					{:else if item.rc_type === 'small'}
-						{$_('4_people_class')}
-					{/if}
-				</div>
-				<div class="rounded-sm bg-purple-500 text-white text-xs px-4 py-1 ml-1">{$_(item.lang_type)}</div>
+				<div class="tag bg-blue-500">{lessonSizeLabel(item)}</div>
+				<div class="tag bg-purple-500 ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
 				{item.start_date ? dayjs.utc(item.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma') : $_('class_upon_request')}
