@@ -99,6 +99,7 @@
   "p4-to-p6-exam-prep": "小四至小六適合(呈分試)",
   "no_data": "没有資料",
   "other_time_slot": "其他時間",
-  "show_all": "Show all",
-  "show_less": "Show less"
+  "show_all": "顯視全部",
+  "show_less": "顯視更少",
+  "related_class": "相關課堂"
 }

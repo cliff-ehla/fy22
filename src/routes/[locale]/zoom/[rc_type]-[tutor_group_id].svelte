@@ -57,10 +57,8 @@
 	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
-
 	<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
 	<div class="tag bg-purple-500">{$_(lesson.lang_type)}</div>
-
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
 
@@ -88,6 +86,24 @@
 					{$_(other_slot_items_limit ? 'show_all' : 'show_less')}
 				</button>
 			</div>
+		{/if}
+	</div>
+</div>
+
+<div class="bg-gray-100 py-4 border-t border-gray-200">
+	<div class="container">
+		<h3 class="mb-2 font-bold">{$_('related_class')}</h3>
+		{#if lesson.related_class.length}
+			{#each lesson.related_class as c}
+				<div class="flex overflow-x-scroll">
+					<div class="w-32 mr-2 flex-shrink-0">
+						<img class="rounded shadow" src={c.thumbnail_path} alt={c.name}>
+						<p class="text-sm text-gray-500 leading-tight mt-1">{c.name}</p>
+					</div>
+				</div>
+			{/each}
+		{:else}
+			<p class="text-gray-500 text-sm">{$_('no_data')}</p>
 		{/if}
 	</div>
 </div>
