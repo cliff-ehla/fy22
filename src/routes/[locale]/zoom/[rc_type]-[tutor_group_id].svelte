@@ -65,7 +65,7 @@
 </div>
 
 <div class="bg-white max-w-screen-lg mx-auto p-4">
-	<p class="text-blue-500 font-bold">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
+	<p class="text-blue-500 font-bold text-t1">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
 	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
