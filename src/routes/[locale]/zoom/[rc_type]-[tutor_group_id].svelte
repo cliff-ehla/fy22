@@ -34,12 +34,25 @@
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
 	import {lessonSizeLabel} from "$lib/zoom/lesson-size-label";
 	import Icon from '$lib/ui/icon.svelte'
+	import {getContext} from 'svelte'
+	const {openModal} = getContext('modal')
+	import LessonDetail from '$lib/zoom/lesson-detail.svelte'
+	import {goto} from '$app/navigation'
 
 	dayjs.extend(utc)
 	export let lesson
 	export let tutor
 	let other_slot_items_limit = true
-	console.log(lesson)
+
+	const onRelatedClassClick = (_lesson) => {
+		if (_lesson.tutor_group_id) {
+			goto(`/${$locale}/zoom/${_lesson.rc_type}-${_lesson.tutor_group_id}`)
+		} else {
+			openModal(LessonDetail, {
+				lesson: _lesson
+			})
+		}
+	}
 </script>
 
 <div class="bg-gray-100 md:pt-8">
@@ -62,10 +75,10 @@
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
 
-<div class="bg-gray-100 p-4 border-t border-gray-200">
+<div class="bg-gray-100 py-4 border-t border-gray-200">
 	<div class="container">
 		<h3 class="mb-2 font-bold">{$_('other_time_slot')}</h3>
-		{#if lesson.other_time_slots > 0}
+		{#if lesson.other_time_slots.length > 0}
 			{#each lesson.other_time_slots.slice(0, other_slot_items_limit ? 3: 9999) as slot}
 				<a href="{slot.rc_type}-{slot.tutor_group_id}" class="flex py-2 text-sm border-b border-gray-200 items-center">
 					<div class="flex-1">
@@ -96,10 +109,10 @@
 		{#if lesson.related_class.length}
 			{#each lesson.related_class as c}
 				<div class="flex overflow-x-scroll">
-					<a href={c.rc_type}-{c.tutor_group_id} class="w-32 mr-2 flex-shrink-0">
+					<div on:click={() => {onRelatedClassClick(c)}} class="w-32 mr-2 flex-shrink-0 cursor-pointer">
 						<img class="rounded shadow" src={c.thumbnail_path} alt={c.name}>
 						<p class="text-sm text-gray-500 leading-tight mt-1">{c.name}</p>
-					</a>
+					</div>
 				</div>
 			{/each}
 		{:else}

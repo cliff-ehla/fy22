@@ -1,5 +1,6 @@
 <script>
 	import ZoomNav from '$lib/header/zoom-nav.svelte'
+	import Modal from '$lib/app-shelf/modal.svelte'
 	import '../styles/tailwind-output.css';
 
 	import {addMessages, _, locale} from 'svelte-i18n'
@@ -34,10 +35,12 @@
 
 <ZoomNav/>
 <main>
-	{#if $navigating}
-		<div class="fixed inset-x-0 top-0 z-50">
-			<LoadingBar/>
-		</div>
-	{/if}
-	<slot />
+	<Modal>
+		{#if $navigating}
+			<div class="fixed inset-x-0 top-0 z-50">
+				<LoadingBar/>
+			</div>
+		{/if}
+		<slot />
+	</Modal>
 </main>
