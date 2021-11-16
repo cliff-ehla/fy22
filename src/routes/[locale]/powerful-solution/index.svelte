@@ -11,33 +11,31 @@
 <div class="bg-gray-100">
 	<div class="my-8 article container" use:avoidMultipleVideoPlay>
 
-		<div class="mb-8 pb-8 border-b border-gray-200">
+		<div class="mb-8 pb-8 border-b border-gray-300">
 			<h1 class="mb-2">{$_('powerful_solution.title')}</h1>
 			<p class="text-p2 md:text-p3">{$_('powerful_solution.desc')}</p>
 		</div>
 
 		<div class="grid md:grid-cols-2 gap-8">
 			<a href="powerful-solution/vocabulary-spelling-booster">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/vocabulary-spelling-booster.jpg" alt="img">
 				<h2>{$_('vocab_module.title')}</h2>
 				<p>{$_('vocab_module.subtitle')}</p>
+				<img class="mt-4 rounded shadow-lg" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/vocabulary-spelling-booster.jpg" alt="img">
 			</a>
-			<div class="bg-gray-300 mt-4 h-0.5"></div>
 			<a href="powerful-solution/revision-module-for-kid">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/revision-module-for-kid.jpg" alt="img">
 				<h2>{$_('k3_revision_pack.title')}</h2>
 				<p>{$_('k3_revision_pack.subtitle')}</p>
+				<img class="mt-4 rounded shadow-lg" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/revision-module-for-kid.jpg" alt="img">
 			</a>
-			<div class="bg-gray-300 mt-4 h-0.5"></div>
 			<a href="powerful-solution/after-class-revision">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/after-class-revision.jpg" alt="img">
 				<h2>{$_('after_class_revision.title')}</h2>
+				<p>{$_('after_class_revision.subtitle')}</p>
+				<img class="mt-4 rounded shadow-lg" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/after-class-revision.jpg" alt="img">
 			</a>
-			<div class="bg-gray-300 mt-4 h-0.5"></div>
 			<a href="powerful-solution/exam-prep-revision-tutorial-pack">
-				<img class="mb-4 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/powerful-solution/exam-prep-revision-tutorial-pack.jpg" alt="img">
 				<h2>{$_('exam_training_pack.title')}</h2>
 				<p>{$_('exam_training_pack.subtitle')}</p>
+				<img class="mt-4 rounded shadow-lg" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/exam-prep-revision-tutorial-pack.png" alt="img">
 			</a>
 		</div>
 	</div>

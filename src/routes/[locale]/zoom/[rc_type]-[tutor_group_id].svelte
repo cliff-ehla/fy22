@@ -66,6 +66,15 @@
 	<div class="bg-purple-500 text-white px-2 py-1 leading-none inline-block rounded-full text-sm mt-2">{$_(lesson.lang_type)}</div>
 
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
+
+	<h3>Other time slot</h3>
+	{#each lesson.other_time_slots as slot}
+		<div class="py-4">
+			<p>{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
+			<p>Teacher {slot.tutor_name}</p>
+
+		</div>
+	{/each}
 </div>
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">

@@ -82,6 +82,7 @@
 	{#if classroom && classroom.length}
 		{#each classroom as c}
 			<LessonPreview item={c}/>
+			<div class="h-0.5 bg-gray-200"></div>
 		{/each}
 	{:else}
 		<p class="p-4 text-gray-400">No lessons found</p>
