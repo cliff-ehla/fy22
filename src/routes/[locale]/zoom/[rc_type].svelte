@@ -12,18 +12,20 @@
 			}
 		}
 
-		const res = await http.get(fetch, '/list_zoom_tutor', {
+		const p1 = http.get(fetch, '/list_zoom_tutor', {
 			rc_type
 		})
 
-		const res2 = await http.post(fetch, '/list_registrable_classroom', {
+		const p2 = await http.post(fetch, '/list_registrable_classroom', {
 			rc_type,
 			rc_tag
 		})
 
-		const res3 = await http.get(fetch, '/list_registrable_classroom_tag', {
+		const p3 = await http.get(fetch, '/list_registrable_classroom_tag', {
 			rc_type
 		})
+
+		const [res, res2, res3] = await Promise.all([p1,p2,p3])
 
 		if (res.success && res2.success) {
 			return {
