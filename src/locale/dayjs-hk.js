@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import updateLocale from 'dayjs/plugin/updateLocale'
+import updateLocale from 'dayjs/plugin/updateLocale.js'
 dayjs.extend(updateLocale)
 
 dayjs.updateLocale('zh-hk', {
