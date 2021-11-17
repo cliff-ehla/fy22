@@ -11,9 +11,14 @@
 </script>
 
 <script>
+	import {hub} from "$lib/hub";
+
 	export let error_message;
 	export let status;
-	console.error(error_message, status)
+	hub.log({
+		error_message,
+		status
+	})
 </script>
 
 <div class="container text-center py-12">
