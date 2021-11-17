@@ -5,6 +5,7 @@
 </script>
 
 <script>
+	console.error('testing error')
 	const ad_list = [
 		{
 			title_en: 'Reading & Speaking Programme (below 6 yro)',

@@ -13,6 +13,7 @@
 <script>
 	export let error_message;
 	export let status;
+	console.error(error_message, status)
 </script>
 
 <div class="container text-center py-12">
