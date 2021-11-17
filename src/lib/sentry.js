@@ -3,12 +3,10 @@ import {Integrations} from "@sentry/tracing";
 let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
 let env = import.meta.env.VITE_ENV
 
-const hub = (() => {
-	let hub
-
+const sentry = (() => {
 	const init = () => {
-		if (['production', 'staging'].includes(env)) {
-			hub = Sentry.init({
+		if (['production', 'staging', 'dev'].includes(env)) {
+			Sentry.init({
 				dsn: sentry_dsn,
 				environment: env,
 				integrations: [new Integrations.BrowserTracing()],
@@ -18,8 +16,8 @@ const hub = (() => {
 	}
 
 	const log = (error) => {
-		if (['production', 'staging'].includes(env)) {
-			hub.captureException(error)
+		if (['production', 'staging', 'dev'].includes(env)) {
+			Sentry.captureException(new Error(error))
 		}
 	}
 
@@ -29,4 +27,4 @@ const hub = (() => {
 	}
 })()
 
-export {hub}
+export {sentry}

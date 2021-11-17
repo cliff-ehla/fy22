@@ -11,11 +11,11 @@
 </script>
 
 <script>
-	import {hub} from "$lib/hub";
+	import {sentry} from "$lib/sentry";
 
 	export let error_message;
 	export let status;
-	hub.log({
+	sentry.log({
 		error_message,
 		status
 	})

@@ -13,7 +13,7 @@
 	import "../locale/dayjs-hk.js";
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
 	import {onMount} from 'svelte'
-	import {hub} from "$lib/hub";
+	import {sentry} from "$lib/sentry";
 
 	let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
 	let env = import.meta.env.VITE_ENV
@@ -26,7 +26,7 @@
 	})
 
 	onMount(() => {
-		hub.init()
+		sentry.init()
 	})
 </script>
 

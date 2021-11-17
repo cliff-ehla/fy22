@@ -2,11 +2,11 @@
 	export const prerender = true;
 	import {locale, _} from 'svelte-i18n'
 	import Head from '$lib/head.svelte'
-	import {hub} from "$lib/hub";
+	import {sentry} from "$lib/sentry";
 </script>
 
 <script>
-	hub.log('testing error')
+	sentry.log('testing error 123')
 	const ad_list = [
 		{
 			title_en: 'Reading & Speaking Programme (below 6 yro)',
