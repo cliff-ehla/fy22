@@ -12,13 +12,9 @@
 
 <script>
 	import {sentry} from "$lib/sentry";
-
 	export let error_message;
 	export let status;
-	sentry.log({
-		error_message,
-		status
-	})
+	sentry.log(error_message)
 </script>
 
 <div class="container text-center py-12">

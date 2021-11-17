@@ -13,6 +13,8 @@
 <script>
 	export let error_message;
 	export let status;
+	import {sentry} from "$lib/sentry";
+	sentry.log(error_message)
 </script>
 
 <div class="container text-center py-12">
