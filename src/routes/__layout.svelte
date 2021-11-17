@@ -14,6 +14,7 @@
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
 	import {onMount} from 'svelte'
 	import {sentry} from "$lib/sentry";
+	import dayjs from "dayjs";
 
 	let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
 	let env = import.meta.env.VITE_ENV
@@ -24,6 +25,7 @@
 		fallbackLocale: 'en',
 		initialLocale: $page.params.locale
 	})
+	dayjs.locale($page.params.locale === 'hk' ? 'zh-hk' : 'en')
 
 	onMount(() => {
 		sentry.init()
