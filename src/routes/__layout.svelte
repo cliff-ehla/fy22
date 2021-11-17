@@ -15,6 +15,7 @@
 	import {onMount} from 'svelte'
 	import * as Sentry from "@sentry/browser";
 	import { Integrations } from "@sentry/tracing";
+	import dayjs from "dayjs";
 
 	let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
 	let env = import.meta.env.VITE_ENV
@@ -25,6 +26,7 @@
 		fallbackLocale: 'en',
 		initialLocale: $page.params.locale
 	})
+	dayjs.locale($page.params.locale === 'hk' ? 'zh-hk' : 'en')
 
 	onMount(() => {
 		if (['production', 'staging'].includes(env)) {
