@@ -5,7 +5,7 @@ let env = import.meta.env.VITE_ENV
 
 const sentry = (() => {
 	const init = () => {
-		if (['production', 'staging', 'dev'].includes(env)) {
+		if (['production', 'staging'].includes(env)) {
 			Sentry.init({
 				dsn: sentry_dsn,
 				environment: env,
@@ -16,7 +16,7 @@ const sentry = (() => {
 	}
 
 	const log = (error) => {
-		if (['production', 'staging', 'dev'].includes(env)) {
+		if (['production', 'staging'].includes(env)) {
 			Sentry.captureException(new Error(error))
 		}
 	}
