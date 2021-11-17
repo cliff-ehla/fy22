@@ -71,7 +71,7 @@
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 	<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
-	<div class="tag bg-purple-500">{$_(lesson.lang_type)}</div>
+	<div class="tag {lesson.is_native_teacher ? 'bg-purple-500' : 'bg-yellow-700'}">{$_(lesson.lang_type)}</div>
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
 
@@ -85,7 +85,7 @@
 						<p class="text-blue-500">{dayjs.utc(slot.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma')}</p>
 						<p class="text-gray-400">{$_('teacher')}: {slot.tutor_name}</p>
 						<div class="tag bg-blue-500">{lessonSizeLabel(slot)}</div>
-						<div class="tag bg-purple-500">{$_(slot.is_native_teacher ? 'Native-speaker-teacher-class' : 'Bilingual-class')}</div>
+						<div class="tag {slot.is_native_teacher ? 'bg-purple-500' : 'bg-yellow-700'}">{$_(slot.is_native_teacher ? 'Native-speaker-teacher-class' : 'Bilingual-class')}</div>
 					</div>
 					<Icon name="right" className="flex-shrink-0 ml-4 w-4 text-gray-400"/>
 				</a>
