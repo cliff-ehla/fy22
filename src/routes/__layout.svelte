@@ -11,6 +11,7 @@
 	import {navigating} from "$app/stores";
 	import dayjs from "dayjs";
 	import 'dayjs/locale/zh-hk.js';
+	import "../locale/dayjs-hk.js";
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
 
 	addMessages('en', en)
