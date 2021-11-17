@@ -9,7 +9,6 @@
 	import {init} from 'svelte-i18n'
 	import {page} from '$app/stores'
 	import {navigating} from "$app/stores";
-	import dayjs from "dayjs";
 	import 'dayjs/locale/zh-hk.js';
 	import "../locale/dayjs-hk.js";
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
@@ -27,24 +26,15 @@
 		initialLocale: $page.params.locale
 	})
 
-	$: {
-		if ($page.params.locale) {
-			locale.set($page.params.locale)
-			if ($page.params.locale === 'hk') {
-				dayjs.locale('zh-hk')
-			} else {
-				dayjs.locale('en')
-			}
-		}
-	}
-
 	onMount(() => {
-		Sentry.init({
-			dsn: sentry_dsn,
-			environment: env,
-			integrations: [new Integrations.BrowserTracing()],
-			tracesSampleRate: 1.0,
-		});
+		if (['production', 'staging'].includes(env)) {
+			Sentry.init({
+				dsn: sentry_dsn,
+				environment: env,
+				integrations: [new Integrations.BrowserTracing()],
+				tracesSampleRate: 1.0,
+			});
+		}
 	})
 </script>
 
