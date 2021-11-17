@@ -13,6 +13,7 @@
 	import 'dayjs/locale/zh-hk.js';
 	import "../locale/dayjs-hk.js";
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
+	import {onMount} from 'svelte'
 
 	import * as Sentry from "@sentry/browser";
 	import { Integrations } from "@sentry/tracing";
@@ -27,7 +28,10 @@
 		tracesSampleRate: 1.0,
 	});
 
-	myUndefinedFunction();
+	onMount(() => {
+		console.log('error')
+		myUndefinedFunction();
+	})
 
 	addMessages('en', en)
 	addMessages('hk', hk)
