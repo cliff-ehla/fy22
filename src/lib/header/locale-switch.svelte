@@ -4,6 +4,7 @@
 	import {page} from '$app/stores'
 	import {fade, slide} from 'svelte/transition'
 	import Icon from '$lib/ui/icon.svelte'
+	import dayjs from "dayjs";
 
 	const locales = [
 		{
@@ -22,6 +23,7 @@
 		locale.set(key)
 		const new_path = `/${key}` + $page.path.substring(3)
 		goto(new_path)
+		dayjs.locale(key === 'hk' ? 'zh-hk' : 'en')
 		visible = false
 	}
 </script>

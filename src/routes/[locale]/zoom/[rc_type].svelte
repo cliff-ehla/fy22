@@ -4,9 +4,10 @@
 	export const load = async ({fetch, page}) => {
 		const accepted_rc_type = ['big', 'small']
 		const rc_type = page.params.rc_type
-		if (!accepted_rc_type.includes(rc_type)) {
+		const rc_tag = page.query.get('rc_tag')
+		if (!accepted_rc_type.includes(rc_type) || !rc_tag) {
 			return {
-				redirect: 'big',
+				redirect: 'big?rc_tag=all',
 				status: 302
 			}
 		}
@@ -17,14 +18,19 @@
 
 		const res2 = await http.post(fetch, '/list_registrable_classroom', {
 			rc_type,
-			rc_tag: page.query.rc_tag || 'all'
+			rc_tag
+		})
+
+		const res3 = await http.get(fetch, '/list_registrable_classroom_tag', {
+			rc_type
 		})
 
 		if (res.success && res2.success) {
 			return {
 				props: {
 					teacher_list: res.data,
-					classroom: res2.data
+					classroom: res2.data,
+					tag_list: res3.data.rc_tags
 				}
 			}
 		}
@@ -37,6 +43,7 @@
 
 <script>
 	export let teacher_list
+	export let tag_list
 	export let classroom
 
 	import Head from '$lib/head.svelte'
@@ -59,11 +66,26 @@
 	{/if}
 </div>
 
-<div class="mt-4 sm:pt-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg">
+{#if tag_list && tag_list.length}
+	<div class="container">
+		<div class="overflow-auto flex mt-4">
+			{#each tag_list as _tag}
+				<a href="?rc_tag={_tag}"
+				   class="inline-block text-sm {$page.query.get('rc_tag') === _tag ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
+				>{$_(_tag)}</a>
+			{/each}
+		</div>
+	</div>
+{/if}
+
+<div class="my-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg grid gap-4">
 	{#if classroom && classroom.length}
 		{#each classroom as c}
 			<LessonPreview item={c}/>
+			<div class="h-0.5 bg-gray-200"></div>
 		{/each}
+	{:else}
+		<p class="p-4 text-gray-400">No lessons found</p>
 	{/if}
 </div>
 

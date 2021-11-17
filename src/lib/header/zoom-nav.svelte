@@ -6,11 +6,11 @@
 	$: nav_items = [
 		{
 			label: 'big_class',
-			href: `/${$locale}/zoom/big?tag=all`
+			href: `/${$locale}/zoom/big?rc_tag=all`
 		},
 		{
 			label: 'small_class',
-			href: `/${$locale}/zoom/small?tag=all`
+			href: `/${$locale}/zoom/small?rc_tag=all`
 		},
 		{
 			label: 'one_on_one',
