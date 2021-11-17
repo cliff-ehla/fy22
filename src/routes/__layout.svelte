@@ -14,25 +14,11 @@
 	import "../locale/dayjs-hk.js";
 	import LoadingBar from '$lib/ui/indeterminate-loading-bar.svelte'
 	import {onMount} from 'svelte'
-
 	import * as Sentry from "@sentry/browser";
 	import { Integrations } from "@sentry/tracing";
 
-	Sentry.init({
-		dsn: "https://10f7700a46d645238b21377f73ec869f@o1067583.ingest.sentry.io/6061306",
-		integrations: [new Integrations.BrowserTracing()],
-
-		// Set tracesSampleRate to 1.0 to capture 100%
-		// of transactions for performance monitoring.
-		// We recommend adjusting this value in production
-		tracesSampleRate: 1.0,
-	});
-
-	onMount(() => {
-		console.log('error')
-		myUndefinedFunction();
-	})
-
+	let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
+	let env = import.meta.env.VITE_ENV
 	addMessages('en', en)
 	addMessages('hk', hk)
 
@@ -51,10 +37,22 @@
 			}
 		}
 	}
+
+	onMount(() => {
+		Sentry.init({
+			dsn: sentry_dsn,
+			environment: env,
+			integrations: [new Integrations.BrowserTracing()],
+			tracesSampleRate: 1.0,
+		});
+	})
 </script>
 
 <ZoomNav/>
-<div class="bg-yellow-500 fixed top-0 inset-x-0 font-bold text-xs text-center">Dev test</div>
+
+{#if env === 'dev'}
+	<div class="bg-yellow-500 fixed top-0 inset-x-0 font-bold text-center z-50" style="font-size: 8px">Dev test</div>
+{/if}
 <main>
 	<Modal>
 		{#if $navigating}
