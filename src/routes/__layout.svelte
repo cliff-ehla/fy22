@@ -34,7 +34,7 @@
 
 <ZoomNav/>
 
-{#if env !== 'production'}
+{#if env === 'staging'}
 	<div class="bg-yellow-500 fixed top-0 inset-x-0 font-bold text-center z-50" style="font-size: 8px">{env}</div>
 {/if}
 <main>

@@ -33,11 +33,14 @@
 			<LocaleSwitch/>
 		</div>
 	</div>
+</div>
+
+<div class="m-4 mx-auto max-w-screen-lg px-4 sticky inset-x-0 top-0 bg-white">
 	<div class="flex mt-2 overflow-x-scroll">
 		{#each nav_items as item}
 			<a
 							class:active={$page.path.startsWith(item.href.split('?')[0])}
-							href={item.href} class="text-gray-400 text md:text-t1 mr-3 pb-1 whitespace-nowrap relative">{$_(item.label)}
+							href={item.href} class="text-gray-400 text md:text-t1 mr-3 pb-1.5 pt-1.5 whitespace-nowrap relative">{$_(item.label)}
 				{#if $page.path.startsWith(item.href.split('?')[0])}
 					<span class="absolute h-0.5 bg-black inset-x-0 bottom-0"></span>
 				{/if}
