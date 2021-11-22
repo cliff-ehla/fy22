@@ -20,7 +20,9 @@
 		{#if item.rc_level}
 			<p class="text-sm sm:text">{$_('level')}: {$_(item.rc_level)}</p>
 		{/if}
-		<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
+		{#if item.tutor_name}
+			<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
+		{/if}
 		<div class="mt-auto">
 			<div class="flex mb-1">
 				<div class="tag bg-blue-500">{lessonSizeLabel(item)}</div>
