@@ -22,9 +22,10 @@
 	export let tutor
 	export let lessons
 
-	import {_} from 'svelte-i18n'
+	import {_, locale} from 'svelte-i18n'
 	import TeacherSection from '$lib/zoom/teacher-section.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
+	import Head from '$lib/head.svelte'
 </script>
 
 <div class="max-w-screen-lg mx-auto">
@@ -49,3 +50,8 @@
 		{/if}
 	</div>
 </div>
+
+<Head image={tutor.profile_pic}
+      title={tutor.display_name}
+      description={$locale === 'hk' ? tutor.subtitle_hk : tutor.subtitle}
+/>
