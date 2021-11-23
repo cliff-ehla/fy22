@@ -74,7 +74,11 @@
 	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
-	<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+	{#if lesson.start_date}
+        <div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+    {:else}
+        <div class="tag bg-blue-500">{$_(`${lesson.rc_type}_class`)}</div>
+    {/if}
 	<div class="tag {lesson.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'}">{$_(lesson.lang_type)}</div>
 	<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 </div>
@@ -137,7 +141,11 @@
 	<div class="bg-white max-w-screen-lg mx-auto p-4">
 		<p class="text-blue-500 font-bold text-t1">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
 		<p class="font-bold md:text-xl">{lesson.name}</p>
-		<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+		{#if lesson.start_date}
+            <div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+        {:else}
+            <div class="tag bg-blue-500">{$_(`${lesson.rc_type}_class`)}</div>
+        {/if}
 		<div class="tag {lesson.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'}">{$_(lesson.lang_type)}</div>
 		<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
 	</div>
