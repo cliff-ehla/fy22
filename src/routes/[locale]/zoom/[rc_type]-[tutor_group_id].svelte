@@ -7,14 +7,17 @@
 		})
 
 		if (res.success) {
-			const res2 = await http.get(fetch, '/zoom_tutor_by_id', {
-				tutor_id: res.data.tutor_id
-			})
+			let res2
+			if (res.data.tutor_id) {
+				res2 = await http.get(fetch, '/zoom_tutor_by_id', {
+					tutor_id: res.data.tutor_id
+				})
+			}
 
 			return {
 				props: {
 					lesson: res.data,
-					tutor: res2.data
+					tutor: res2 ? res2.data : null
 				}
 			}
 		}
@@ -43,7 +46,6 @@
 	export let lesson
 	export let tutor
 	let other_slot_items_limit = true
-	console.log(lesson)
 
 	const onRelatedClassClick = (_lesson) => {
 		if (_lesson.tutor_group_id) {
@@ -56,6 +58,7 @@
 	}
 </script>
 
+{#if tutor}
 <div class="bg-gray-100 md:pt-8">
 	<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path_header}); max-width: 720px"></div>
 	<div class="bg-blue-500 text-white h-12 flex items-center md:rounded-t-lg -mt-4 md:mt-4">
@@ -68,7 +71,7 @@
 <div class="bg-white max-w-screen-lg mx-auto p-4">
 	<p class="text-blue-500 font-bold text-t1">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
-	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>
+	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {lesson.rc_level}</p>
 	<p class="text-gray-500 text-sm">{$_('duration')}: {lesson.duration} {$_('minutes')}</p>
 	<p class="text-gray-500 text-sm">{$_('teacher')}: {lesson.tutor_name}</p>
 	<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
@@ -124,12 +127,22 @@
 
 <div class="bg-gray-100 p-4 border-t border-gray-200">
 	<div class="max-w-screen-lg mx-auto">
-		{#if tutor}
-			<TeacherSection teacher={tutor}/>
-		{/if}
+		<TeacherSection teacher={tutor}/>
 	</div>
 </div>
+{:else}
+	<div class="bg-gray-100 md:pt-8">
+		<div class="h-64 md:h-96 bg-center mx-auto bg-cover bg-center md:rounded-lg" style="background-image: url({lesson.thumbnail_path_header}); max-width: 720px"></div>
+	</div>
+	<div class="bg-white max-w-screen-lg mx-auto p-4">
+		<p class="text-blue-500 font-bold text-t1">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
+		<p class="font-bold md:text-xl">{lesson.name}</p>
+		<div class="tag bg-blue-500">{lessonSizeLabel(lesson)}</div>
+		<div class="tag {lesson.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'}">{$_(lesson.lang_type)}</div>
+		<p class="mt-4 text-gray-500">{@html $locale === 'hk' ? lesson.description_alter : lesson.description}</p>
+	</div>
+{/if}
 
 <Head title={lesson.name}
-      subtitle={$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}
+      description={$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}
       image={lesson.thumbnail_path_square}/>
