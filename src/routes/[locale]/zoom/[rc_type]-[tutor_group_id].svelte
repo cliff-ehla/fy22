@@ -43,6 +43,7 @@
 	export let lesson
 	export let tutor
 	let other_slot_items_limit = true
+	console.log(lesson)
 
 	const onRelatedClassClick = (_lesson) => {
 		if (_lesson.tutor_group_id) {
@@ -129,4 +130,6 @@
 	</div>
 </div>
 
-<Head title={lesson.name}/>
+<Head title={lesson.name}
+      subtitle={$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}
+      image={lesson.thumbnail_path_square}/>
