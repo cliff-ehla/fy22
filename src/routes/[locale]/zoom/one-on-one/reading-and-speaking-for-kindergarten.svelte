@@ -9,6 +9,7 @@
 	import ImportantSharing from '$lib/zoom/one-on-one/important-sharing.svelte'
 	import AfterClassRevisionModule from '$lib/zoom/one-on-one/after-class-revision-module.svelte'
 	import {avoidMultipleVideoPlay} from "$lib/action/avoid-multiple-video-play";
+	import Head from '$lib/head.svelte'
 
 	const slug = $page.path.split('/').pop()
 </script>
@@ -62,6 +63,7 @@
 	</div>
 </div>
 
-<svelte:head>
-	<title>{$_(slug)}</title>
-</svelte:head>
+<Head
+				title={$_(slug)}
+				image="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{$page.path.split('/').pop()}.jpg"
+/>
