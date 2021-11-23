@@ -20,4 +20,9 @@
 	<meta property="og:image:secure_url" content="{image}">
 	<meta property="og:url" content="https://{$page.host}{$page.path}">
 
+	<meta name="twitter:title" content="{title}">
+	<meta name="twitter:description" content="{description}">
+	<meta name="twitter:image" content="{image}">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://{$page.host}{$page.path}">
 </svelte:head>
