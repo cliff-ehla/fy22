@@ -1,3 +1,13 @@
+<script context="module">
+	import {http} from "$lib/http";
+
+	export const load = async ({fetch}) => {
+		const {data} = await http.get(fetch, '/version')
+		console.log(data)
+		return true
+	}
+</script>
+
 <script>
 	import ZoomNav from '$lib/header/zoom-nav.svelte'
 	import Modal from '$lib/app-shelf/modal.svelte'
