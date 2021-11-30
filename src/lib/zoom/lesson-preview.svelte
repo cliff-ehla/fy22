@@ -25,7 +25,11 @@
 		{/if}
 		<div class="mt-auto">
 			<div class="flex mb-1">
-				<div class="tag bg-blue-500">{lessonSizeLabel(item)}</div>
+			    {#if item.start_date}
+			        <div class="tag bg-blue-500">{lessonSizeLabel(item)}</div>
+			    {:else}
+			        <div class="tag bg-blue-500">{$_(`${item.rc_type}_class`)}</div>
+			    {/if}
 				<div class="tag {item.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'} ml-1">{$_(item.lang_type)}</div>
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
