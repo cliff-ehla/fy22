@@ -30,7 +30,9 @@
 			    {:else}
 			        <div class="tag bg-blue-500">{$_(`${item.rc_type}_class`)}</div>
 			    {/if}
-				<div class="tag {item.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'} ml-1">{$_(item.lang_type)}</div>
+				{#if item.lang_type}
+					<div class="tag {item.is_native_teacher ? 'bg-purple-500' : 'bg-red-700'} ml-1">{$_(item.lang_type)}</div>
+				{/if}
 			</div>
 			<p class="text-blue-500 text-sm sm:text">
 				{item.start_date ? dayjs.utc(item.start_date).local().format($locale === 'hk' ? 'YYYY年MMMDD日  (ddd) h:mma' : 'DD MMM YYYY (ddd) h:mma') : $_('class_upon_request')}
