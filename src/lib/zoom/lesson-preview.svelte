@@ -6,11 +6,18 @@
 	import {lessonSizeLabel} from "$lib/zoom/lesson-size-label";
 
 	dayjs.extend(utc)
+	let is_full = item.student_size !== "0" ? item.reg_user_cnt === item.student_size : false
 </script>
 
 <a href="/{$locale}/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
-	<div class="w-20 md:w-28 flex-shrink-0">
+	<div class="w-20 md:w-28 flex-shrink-0 relative">
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
+		{#if is_full}
+			<svg class="absolute left-0 top-0 fill-current text-red-500 w-1/2 shadow-lg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40 0H0V40L40 0Z"/>
+			</svg>
+			<div class="text-white absolute left-1 top-2 transform -rotate-45 text-sm font-bold">{$_('full')}</div>
+		{/if}
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
 		<p class="text-blue-500 font-bold">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
