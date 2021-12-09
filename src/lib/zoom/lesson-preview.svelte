@@ -13,10 +13,9 @@
 	<div class="w-20 md:w-28 flex-shrink-0 relative">
 		<img src={item.thumbnail_path} alt="hi" class="rounded-sm">
 		{#if is_full}
-			<svg class="absolute left-0 top-0 fill-current text-red-500 w-1/2 shadow-lg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M40 0H0V40L40 0Z"/>
-			</svg>
-			<div class="text-white absolute left-1 top-2 transform -rotate-45 text-sm font-bold">{$_('full')}</div>
+			<div class="absolute flex items-center justify-center inset-0 rounded-sm bg-red-500 bg-opacity-90 text-white">
+				<p class="font-bold">{$_('full')}</p>
+			</div>
 		{/if}
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
