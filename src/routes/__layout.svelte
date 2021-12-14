@@ -43,7 +43,7 @@
 				<LoadingBar/>
 			</div>
 		{/if}
-		<div class="fixed bottom-2 right-2">
+		<div class="fixed bottom-4 right-4">
 			<a href="https://wa.me/85296548680" class="block">
 				<img src="/whatsapp-logo.png" class="w-14 mx-auto" alt="whatsapp">
 				<p class="text-green-500 font-bold" style="font-size: 10px">Whatsapp 查詢</p>
