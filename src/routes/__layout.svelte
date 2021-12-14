@@ -16,7 +16,6 @@
 	import {sentry} from "$lib/sentry";
 	import dayjs from "dayjs";
 
-	let sentry_dsn = import.meta.env.VITE_SENTRY_DSN
 	let env = import.meta.env.VITE_ENV
 	addMessages('en', en)
 	addMessages('hk', hk)
@@ -44,6 +43,12 @@
 				<LoadingBar/>
 			</div>
 		{/if}
+		<div class="fixed bottom-2 right-2">
+			<a href="https://wa.me/85296548680" class="block">
+				<img src="/whatsapp-logo.png" class="w-14 mx-auto" alt="whatsapp">
+				<p class="text-green-500 font-bold" style="font-size: 10px">Whatsapp 查詢</p>
+			</a>
+		</div>
 		<slot />
 	</Modal>
 </main>
