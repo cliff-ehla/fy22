@@ -6,7 +6,8 @@
 	import {lessonSizeLabel} from "$lib/zoom/lesson-size-label";
 
 	dayjs.extend(utc)
-	$: is_full = item.student_size !== "0" ? item.reg_user_cnt === item.student_size : false
+	$: is_full = item.student_size !== "0" ? ite
+			m.reg_user_cnt === item.student_size : false
 </script>
 
 <a href="/{$locale}/zoom/{item.rc_type}-{item.tutor_group_id}" class="flex">
