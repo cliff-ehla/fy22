@@ -12,9 +12,9 @@
 			href: 'reading-and-speaking-for-kindergarten'
 		},
 		{
-			title_en: 'English Language Leap Programme',
-			title_hk: '補底增強(特製) 英文躍升計劃',
-			href: 'english-language-leap-programme'
+			title_en: 'Story telling and speaking',
+			title_hk: '英文故事閱讀與會話課堂',
+			href: 'story-telling-and-speaking'
 		},
 		{
 			title_en: 'Exam-prep (呈分試) Intensive English Programme',
@@ -24,9 +24,9 @@
 			href: 'exam-prep-intensive-english-programme'
 		},
 		{
-			title_en: 'Story telling and speaking',
-			title_hk: '英文故事閱讀與會話課堂',
-			href: 'story-telling-and-speaking'
+			title_en: 'English Language Leap Programme',
+			title_hk: '補底增強(特製) 英文躍升計劃',
+			href: 'english-language-leap-programme'
 		},
 		{
 			title_en: 'Elite Creative Writing Class',
