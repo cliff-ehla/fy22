@@ -19,15 +19,17 @@
 		{/if}
 	</div>
 	<div class="ml-2 md:ml-4 flex flex-col sm:p-2">
-		<p class="text-blue-500 font-bold">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
+		<p class="text-blue-500 font-bold text-sm">{$locale === 'hk' ? item.sub_cat_alter : item.sub_cat}</p>
 		{#if item.name_alter}
 			<p class="font-bold text-sm sm:text">{$locale === 'hk' ? item.name_alter : item.name}</p>
 		{/if}
 		{#if item.rc_level}
-			<p class="text-sm sm:text">{$_('level')}: {$_(item.rc_level)}</p>
+			<p class="text-xs sm:text-sm">{$_('level')}: {$_(item.rc_level)}</p>
 		{/if}
 		{#if item.tutor_name}
-			<p class="text-gray-500 text-sm sm:text">{$_('teacher')}: {item.tutor_name}</p>
+			<p class="text-gray-500 text-xs sm:text-sm mb-2">
+				{$_('teacher')}: {item.tutor_name}
+			</p>
 		{/if}
 		<div class="mt-auto">
 			<div class="flex mb-1">
