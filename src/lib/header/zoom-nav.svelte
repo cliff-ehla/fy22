@@ -5,7 +5,7 @@
 	import {locale} from 'svelte-i18n'
 	$: nav_items = [
 		{
-			label: 'big_class',
+			label: 'classroom',
 			href: `/${$locale}/zoom/classroom?rc_tag=all`
 		},
 		{
