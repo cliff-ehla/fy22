@@ -9,7 +9,7 @@
 		if (res.success) {
 			let res2
 			if (res.data.tutor_id) {
-				res2 = await http.get(fetch, '/zoom_tutor_by_id', {
+				res2 = await http.get(fetch, '/tutorApi/zoom_tutor_by_id', {
 					tutor_id: res.data.tutor_id
 				})
 			}
