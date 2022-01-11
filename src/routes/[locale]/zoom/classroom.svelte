@@ -1,5 +1,6 @@
 <script context="module">
 	import {http} from "$lib/http";
+	import {tag_store} from "$lib/store/classroom.js";
 
 	export const load = async ({fetch, page}) => {
 		const rc_tag = page.query.get('rc_tag')
@@ -12,7 +13,7 @@
 			rc_level
 		})
 
-		const p3 = await http.get(fetch, '/courseApi/list_registrable_classroom_tag')
+		const p3 = await tag_store.cacheOnly(fetch)
 
 		const p4 = await http.get(fetch, '/courseApi/list_registrable_classroom_level')
 
@@ -23,7 +24,7 @@
 				props: {
 					teacher_list: res.data,
 					classroom: res2.data,
-					tag_list: res3.data.rc_tags,
+					tag_list: res3,
 					level_list: res4.data
 				}
 			}
@@ -61,10 +62,10 @@
 	{/if}
 </div>
 
-{#if tag_list && tag_list.length}
+{#if $tag_store && $tag_store.length}
 	<div class="container">
 		<div class="overflow-auto flex mt-4">
-			{#each tag_list as _tag}
+			{#each $tag_store as _tag}
 				<a href="?rc_tag={_tag}"
 				   class="inline-block text-sm {$page.query.get('rc_tag') === _tag ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
 				>{$_(_tag)}</a>
