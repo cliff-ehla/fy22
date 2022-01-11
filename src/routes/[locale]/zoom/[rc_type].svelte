@@ -12,7 +12,7 @@
 			}
 		}
 
-		const p1 = http.get(fetch, '/list_zoom_tutor', {
+		const p1 = http.get(fetch, '/tutorApi/list_zoom_tutor', {
 			rc_type
 		})
 
