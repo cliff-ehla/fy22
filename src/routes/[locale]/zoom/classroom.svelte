@@ -2,34 +2,19 @@
 	import {http} from "$lib/http";
 
 	export const load = async ({fetch, page}) => {
-		const accepted_rc_type = ['big', 'small']
-		const rc_type = page.params.rc_type
 		const rc_tag = page.query.get('rc_tag')
 		const rc_level = page.query.get('rc_level')
-		if (!accepted_rc_type.includes(rc_type) || !rc_tag) {
-			return {
-				redirect: 'big?rc_tag=all',
-				status: 302
-			}
-		}
 
-		const p1 = http.get(fetch, '/tutorApi/list_zoom_tutor', {
-			rc_type
-		})
+		const p1 = http.get(fetch, '/tutorApi/list_zoom_tutor')
 
 		const p2 = await http.post(fetch, '/courseApi/list_registrable_classroom', {
-			rc_type,
 			rc_tag,
 			rc_level
 		})
 
-		const p3 = await http.get(fetch, '/courseApi/list_registrable_classroom_tag', {
-			rc_type
-		})
+		const p3 = await http.get(fetch, '/courseApi/list_registrable_classroom_tag')
 
-		const p4 = await http.get(fetch, '/courseApi/list_registrable_classroom_level', {
-			rc_type
-		})
+		const p4 = await http.get(fetch, '/courseApi/list_registrable_classroom_level')
 
 		const [res, res2, res3, res4] = await Promise.all([p1,p2,p3,p4])
 
@@ -55,7 +40,6 @@
 	export let tag_list
 	export let level_list
 	export let classroom
-	console.log('cliff: ', level_list)
 
 	import Head from '$lib/head.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
@@ -112,4 +96,4 @@
 	{/if}
 </div>
 
-<Head title={$_(`${$page.params.rc_type}_class`)}/>
+<Head title={$_('classroom')}/>
