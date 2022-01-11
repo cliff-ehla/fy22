@@ -5,12 +5,8 @@
 	import {locale} from 'svelte-i18n'
 	$: nav_items = [
 		{
-			label: 'big_class',
-			href: `/${$locale}/zoom/big?rc_tag=all`
-		},
-		{
-			label: 'small_class',
-			href: `/${$locale}/zoom/small?rc_tag=all`
+			label: 'classroom',
+			href: `/${$locale}/zoom/classroom?rc_tag=all&rc_level=all`
 		},
 		{
 			label: 'one_on_one',
@@ -35,7 +31,7 @@
 	</div>
 </div>
 
-<div class="m-4 mx-auto max-w-screen-lg px-4 sticky inset-x-0 top-0 bg-white z-50">
+<div class="m-4 mx-auto max-w-screen-lg px-4 bg-white">
 	<div class="flex mt-2 overflow-x-scroll">
 		{#each nav_items as item}
 			<a

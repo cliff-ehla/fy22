@@ -3,6 +3,7 @@
   "site_slogan": "EHLA | Goes beyond your expectations!",
   "small_class": "Small class",
   "big_class": "Big class",
+  "classroom": "Big/small class",
   "one_on_one": "1-on-1",
   "zoom": {
     "tag": {
@@ -46,7 +47,7 @@
     "note": "Supported with after-class bilingual teaching videos by senior teachers from HK day schools to ensure that the student can completely absorb and digest the knowledge points after class, if she or he cannot fully understand what the native speaker teacher has taught in Zoom class. "
   },
   "after_class_revision": {
-    "title": "After class revision module",
+    "title": "After class revision module 6yro+",
     "subtitle": "Goes beyond your expectations!"
   },
   "reading-and-speaking-for-kindergarten": "Reading & Speaking Programme (below 6 yro)",
@@ -76,6 +77,7 @@
   "course-tag-writing": "Writing",
   "course-tag-grammar": "Grammar",
   "course-tag-interview": "Interview",
+  "course-tag-writing-app": "Writing grading",
   "all": "All",
   "Bilingual-class": "Bilingual",
   "Native-speaker-teacher-class": "Native teacher",
@@ -90,16 +92,25 @@
   "7yro-to-9yro": "7yro to 9yro",
   "ks1-of-primary": "KS1 of Primary",
   "ks2-of-primary": "KS2 of Primary",
+  "p1-p6": "P1-P6",
   "p1-p2": "P1/P2",
   "p2-p3": "P2/P3",
   "p3-p4": "P3/P4",
   "p4-p5": "P4/P5",
   "p5-p6": "P5/P6",
+  "p1": "P1",
+  "p2": "P2",
+  "p3": "P3",
+  "p4": "P4",
+  "p5": "P5",
+  "p6up": "P6+",
+  "k123": "K1-K3",
   "p4-to-p5-exam-prep": "P4 to P5(Exam Prep)",
   "p4-to-p6-exam-prep": "P4 to P6(Exam Prep)",
   "no_data": "No data",
   "other_time_slot": "Other time slot",
   "show_all": "Show all",
   "show_less": "Show less",
-  "related_class": "Related class"
+  "related_class": "Related class",
+  "full": "Full"
 }

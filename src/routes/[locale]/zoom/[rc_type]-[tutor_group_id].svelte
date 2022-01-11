@@ -2,14 +2,14 @@
 	import {http} from "$lib/http";
 
 	export const load = async ({fetch, page}) => {
-		const res = await http.post(fetch, '/registrable_classroom_by_tutor_group_id', {
+		const res = await http.post(fetch, '/courseApi/registrable_classroom_by_tutor_group_id', {
 			tutor_group_id: page.params.tutor_group_id
 		})
 
 		if (res.success) {
 			let res2
 			if (res.data.tutor_id) {
-				res2 = await http.get(fetch, '/zoom_tutor_by_id', {
+				res2 = await http.get(fetch, '/tutorApi/zoom_tutor_by_id', {
 					tutor_id: res.data.tutor_id
 				})
 			}
@@ -46,6 +46,7 @@
 	export let lesson
 	export let tutor
 	let other_slot_items_limit = true
+	let is_full = lesson.student_size !== "0" ? lesson.reg_user_cnt === lesson.student_size : false
 
 	const onRelatedClassClick = (_lesson) => {
 		if (_lesson.tutor_group_id) {
@@ -69,6 +70,9 @@
 </div>
 
 <div class="bg-white max-w-screen-lg mx-auto p-4">
+	{#if is_full}
+		<div class="bg-red-500 px-4 py-1 inline-block text-white rounded mb-4">{$_('full')}</div>
+	{/if}
 	<p class="text-blue-500 font-bold text-t1">{$locale === 'hk' ? lesson.sub_cat_alter : lesson.sub_cat}</p>
 	<p class="font-bold md:text-xl">{lesson.name}</p>
 	<p class="text-gray-500 text-sm mt-2">{$_('level')}: {$_(lesson.rc_level)}</p>

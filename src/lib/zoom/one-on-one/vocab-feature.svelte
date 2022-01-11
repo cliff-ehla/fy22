@@ -8,6 +8,10 @@
 <div class="article">
 	<h2>{$_('vocab_module.title')}</h2>
 	<div role="doc-subtitle" class="mb-4">{$_('vocab_module.subtitle')}</div>
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+		<img src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/vocabulary-spelling-booster-1.jpeg" alt="haha" class="rounded">
+		<img src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/vocabulary-spelling-booste-2.jpeg" alt="haha" class="rounded">
+	</div>
 	<ul>
 		{#each [1,2,3,4,5,6] as i}
 			<li>🎯 {$_(`vocab_module.p${i}`)}</li>

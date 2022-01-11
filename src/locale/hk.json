@@ -3,6 +3,7 @@
   "site_slogan": "EHLA | 超越您所想！",
   "small_class": "小組課",
   "big_class": "大班課",
+  "classroom": "大班/小組課",
   "one_on_one": "一對一",
   "zoom": {
     "tag": {
@@ -46,7 +47,7 @@
     "note": "配備香港正規日校資深老師用雙語(英語＋廣東話)教學輔導視頻，確保學生在外籍老師Zoom課堂上可以把握時間和機會在純英文環境中聽課與會話；但課堂後在家可以得到老師雙語輔導，確保能夠完全吸收及消化知識點。 \n"
   },
   "after_class_revision": {
-    "title": "重要課後鞏固配套(7歲＋)",
+    "title": "重要課後鞏固配套(6歲＋)",
     "subtitle": "極致用心設計，完全超乎你想像❗"
   },
   "reading-and-speaking-for-kindergarten": "小精英級K班課程",
@@ -76,6 +77,7 @@
   "course-tag-writing": "寫作",
   "course-tag-grammar": "文法應用",
   "course-tag-interview": "面試",
+  "course-tag-writing-app": "寫作功課批改",
   "all": "全部",
   "Bilingual-class": "雙語",
   "Native-speaker-teacher-class": "外籍老師",
@@ -90,16 +92,25 @@
   "7yro-to-9yro": "7至9歲",
   "ks1-of-primary": "初小",
   "ks2-of-primary": "高小",
+  "p1-p6": "小一至小六",
   "p1-p2": "小一/小二",
   "p2-p3": "小二/小三",
   "p3-p4": "小三/小四",
   "p4-p5": "小四/小五",
   "p5-p6": "小五/小六",
+  "p1": "小一",
+  "p2": "小二",
+  "p3": "小三",
+  "p4": "小四",
+  "p5": "小五",
+  "p6up": "小六或以上",
+  "k123": "幼兒",
   "p4-to-p5-exam-prep": "小四至小五適合(呈分試)",
   "p4-to-p6-exam-prep": "小四至小六適合(呈分試)",
   "no_data": "没有資料",
   "other_time_slot": "其他時間",
   "show_all": "顯視全部",
   "show_less": "顯視更少",
-  "related_class": "相關課堂"
+  "related_class": "相關課堂",
+  "full": "已滿"
 }

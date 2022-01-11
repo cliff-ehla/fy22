@@ -1,5 +1,5 @@
 import {usermodel} from "$lib/usermodal";
 
 export const get = async (req) => {
-	return usermodel(req, '/courseApi/one_on_one_advertisement_list')
+	return await usermodel(req, `/courseApi/list_registrable_classroom_level_v2`)
 }
