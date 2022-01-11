@@ -1,6 +1,6 @@
 <script context="module">
 	import {http} from "$lib/http";
-	import {tag_store} from "$lib/store/classroom.js";
+	import {tag_store, level_store} from "$lib/store/classroom.js";
 
 	export const load = async ({fetch, page}) => {
 		const rc_tag = page.query.get('rc_tag')
@@ -15,7 +15,7 @@
 
 		const p3 = await tag_store.cacheOnly(fetch)
 
-		const p4 = await http.get(fetch, '/courseApi/list_registrable_classroom_level')
+		const p4 = await level_store.cacheOnly(fetch)
 
 		const [res, res2, res3, res4] = await Promise.all([p1,p2,p3,p4])
 
@@ -74,17 +74,15 @@
 	</div>
 {/if}
 
-{#if level_list && level_list.length}
-	<div class="container">
-		<div class="overflow-auto flex mt-4">
-			{#each level_list as lv}
-				<a href="?rc_tag=all&rc_level={lv}"
-				   class="inline-block text-sm {$page.query.get('rc_level') === lv ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
-				>{$_(lv)}</a>
-			{/each}
-		</div>
+<div class="container">
+	<div class="overflow-auto flex mt-4">
+		{#each $level_store as lv}
+			<a href="?rc_tag=all&rc_level={lv}"
+			   class="inline-block text-sm {$page.query.get('rc_level') === lv ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
+			>{$_(lv)}</a>
+		{/each}
 	</div>
-{/if}
+</div>
 
 <div class="my-8 px-2 sm:px-4 md:mx-auto max-w-screen-lg grid gap-4">
 	{#if classroom && classroom.length}
