@@ -6,7 +6,7 @@
 	$: nav_items = [
 		{
 			label: 'classroom',
-			href: `/${$locale}/zoom/classroom?rc_tag=all`
+			href: `/${$locale}/zoom/classroom?rc_tag=all&rc_level=all`
 		},
 		{
 			label: 'one_on_one',

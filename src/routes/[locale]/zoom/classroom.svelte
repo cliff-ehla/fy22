@@ -75,6 +75,9 @@
 
 <div class="container">
 	<div class="overflow-auto flex mt-4">
+		<a href="{get_url($page.query.get('rc_tag'), 'all')}"
+		   class="inline-block text-sm {$page.query.get('rc_level') === 'all' ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
+		>{$_('all')}</a>
 		{#each $level_store as lv}
 			<a href="{get_url($page.query.get('rc_tag'), lv)}"
 			   class="inline-block text-sm {$page.query.get('rc_level') === lv ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
