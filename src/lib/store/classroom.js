@@ -24,3 +24,4 @@ const factory = (resource) => {
 
 export const tag_store = factory('/courseApi/list_registrable_classroom_tag')
 export const level_store = factory('/courseApi/list_registrable_classroom_level')
+export const tutor_store = factory('/tutorApi/list_zoom_tutor')

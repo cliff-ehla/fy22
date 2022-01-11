@@ -1,12 +1,12 @@
 <script context="module">
 	import {http} from "$lib/http";
-	import {tag_store, level_store} from "$lib/store/classroom.js";
+	import {tag_store, level_store, tutor_store} from "$lib/store/classroom.js";
 
 	export const load = async ({fetch, page}) => {
 		const rc_tag = page.query.get('rc_tag')
 		const rc_level = page.query.get('rc_level')
 
-		const p1 = http.get(fetch, '/tutorApi/list_zoom_tutor')
+		const p1 = await tutor_store.cacheOnly(fetch)
 
 		const p2 = await http.post(fetch, '/courseApi/list_registrable_classroom', {
 			rc_tag,
@@ -19,13 +19,10 @@
 
 		const [res, res2, res3, res4] = await Promise.all([p1,p2,p3,p4])
 
-		if (res.success && res2.success) {
+		if (res2.success) {
 			return {
 				props: {
-					teacher_list: res.data,
-					classroom: res2.data,
-					tag_list: res3,
-					level_list: res4.data
+					classroom: res2.data
 				}
 			}
 		}
@@ -37,9 +34,6 @@
 </script>
 
 <script>
-	export let teacher_list
-	export let tag_list
-	export let level_list
 	export let classroom
 
 	import Head from '$lib/head.svelte'
@@ -50,16 +44,14 @@
 
 <div class="mt-6 mb-4 container">
 	<p class="mb-2">{$_('teacher_for_big_small_class')}</p>
-	{#if teacher_list && teacher_list.length}
-		<div class="flex overflow-auto">
-			{#each teacher_list as tutor}
-				<a href="tutor/{tutor.tutor_id}" class="w-16 sm:w-20 mr-2 sm:mr-4">
-					<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
-					<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
-				</a>
-			{/each}
-		</div>
-	{/if}
+	<div class="flex overflow-auto">
+		{#each $tutor_store as tutor}
+			<a href="tutor/{tutor.tutor_id}" class="w-16 sm:w-20 mr-2 sm:mr-4">
+				<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
+				<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
+			</a>
+		{/each}
+	</div>
 </div>
 
 {#if $tag_store && $tag_store.length}
