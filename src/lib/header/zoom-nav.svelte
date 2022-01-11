@@ -31,7 +31,7 @@
 	</div>
 </div>
 
-<div class="m-4 mx-auto max-w-screen-lg px-4 sticky inset-x-0 top-0 bg-white z-50">
+<div class="m-4 mx-auto max-w-screen-lg px-4 bg-white">
 	<div class="flex mt-2 overflow-x-scroll">
 		{#each nav_items as item}
 			<a
