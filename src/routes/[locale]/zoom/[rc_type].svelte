@@ -5,6 +5,7 @@
 		const accepted_rc_type = ['big', 'small']
 		const rc_type = page.params.rc_type
 		const rc_tag = page.query.get('rc_tag')
+		const rc_level = page.query.get('rc_level')
 		if (!accepted_rc_type.includes(rc_type) || !rc_tag) {
 			return {
 				redirect: 'big?rc_tag=all',
@@ -18,21 +19,27 @@
 
 		const p2 = await http.post(fetch, '/courseApi/list_registrable_classroom', {
 			rc_type,
-			rc_tag
+			rc_tag,
+			rc_level
 		})
 
 		const p3 = await http.get(fetch, '/courseApi/list_registrable_classroom_tag', {
 			rc_type
 		})
 
-		const [res, res2, res3] = await Promise.all([p1,p2,p3])
+		const p4 = await http.get(fetch, '/courseApi/list_registrable_classroom_level', {
+			rc_type
+		})
+
+		const [res, res2, res3, res4] = await Promise.all([p1,p2,p3,p4])
 
 		if (res.success && res2.success) {
 			return {
 				props: {
 					teacher_list: res.data,
 					classroom: res2.data,
-					tag_list: res3.data.rc_tags
+					tag_list: res3.data.rc_tags,
+					level_list: res4.data
 				}
 			}
 		}
@@ -46,7 +53,9 @@
 <script>
 	export let teacher_list
 	export let tag_list
+	export let level_list
 	export let classroom
+	console.log('cliff: ', level_list)
 
 	import Head from '$lib/head.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
@@ -75,6 +84,18 @@
 				<a href="?rc_tag={_tag}"
 				   class="inline-block text-sm {$page.query.get('rc_tag') === _tag ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
 				>{$_(_tag)}</a>
+			{/each}
+		</div>
+	</div>
+{/if}
+
+{#if level_list && level_list.length}
+	<div class="container">
+		<div class="overflow-auto flex mt-4">
+			{#each level_list as lv}
+				<a href="?rc_tag=all&rc_level={lv}"
+				   class="inline-block text-sm {$page.query.get('rc_level') === lv ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
+				>{$_(lv)}</a>
 			{/each}
 		</div>
 	</div>
