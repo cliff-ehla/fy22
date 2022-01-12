@@ -3,14 +3,17 @@
 	import {tag_store, level_store, tutor_store} from "$lib/store/classroom.js";
 
 	export const load = async ({fetch, page}) => {
-		const rc_tag = page.query.get('rc_tag')
 		const rc_level = page.query.get('rc_level')
+		const tag = page.query.get('rc_tag')
+		const rc_tag = ['big_class','small_class'].includes(tag) ? undefined : tag
+		const rc_type = ['big_class','small_class'].includes(tag) ? tag.split('_')[0] : undefined
 
 		const p1 = await tutor_store.cacheOnly(fetch)
 
 		const p2 = await http.post(fetch, '/courseApi/list_registrable_classroom', {
 			rc_tag,
-			rc_level
+			rc_level,
+			rc_type
 		})
 
 		const p3 = await tag_store.cacheOnly(fetch)
@@ -35,6 +38,12 @@
 
 <script>
 	export let classroom
+
+	let _tag_store
+	$: {
+		_tag_store = $tag_store.slice()
+		_tag_store.splice(1,0,'big_class','small_class')
+	}
 
 	import Head from '$lib/head.svelte'
 	import LessonPreview from '$lib/zoom/lesson-preview.svelte'
@@ -65,7 +74,7 @@
 
 <div class="container">
 	<div class="overflow-auto flex mt-4">
-		{#each $tag_store as _tag}
+		{#each _tag_store as _tag}
 			<a href="{get_url(_tag, $page.query.get('rc_level'))}"
 			   class="inline-block text-sm {$page.query.get('rc_tag') === _tag ? 'text-blue-500 border-current' : 'text-gray-500 border-gray-300'} whitespace-nowrap rounded border px-4 py-1 mr-2"
 			>{$_(_tag)}</a>
