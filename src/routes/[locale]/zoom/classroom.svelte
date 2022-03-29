@@ -3,41 +3,18 @@
 	import {tag_store, level_store, tutor_store} from "$lib/store/classroom.js";
 
 	export const load = async ({fetch, page}) => {
-		const rc_level = page.query.get('rc_level')
-		const tag = page.query.get('rc_tag')
-		const rc_tag = ['big_class','small_class'].includes(tag) ? undefined : tag
-		const rc_type = ['big_class','small_class'].includes(tag) ? tag.split('_')[0] : undefined
-
 		const p1 = await tutor_store.cacheOnly(fetch)
-
-		const p2 = await http.post(fetch, '/courseApi/list_registrable_classroom', {
-			rc_tag,
-			rc_level,
-			rc_type
-		})
-
 		const p3 = await tag_store.cacheOnly(fetch)
-
 		const p4 = await level_store.cacheOnly(fetch)
-
-		const [res, res2, res3, res4] = await Promise.all([p1,p2,p3,p4])
-
-		if (res2.success) {
-			return {
-				props: {
-					classroom: res2.data
-				}
-			}
-		}
-		return {
-			error: new Error(JSON.stringify(res.debug)),
-			status: 400
-		}
+		await Promise.all([p1,p3,p4])
+		return true
 	}
 </script>
 
 <script>
-	export let classroom
+	import dayjs from "dayjs";
+	import Spinner from "$lib/ui/Spinner.svelte";
+	let classroom = []
 
 	let _tag_store
 	$: {
@@ -50,6 +27,56 @@
 	import {page} from '$app/stores'
 	import {_} from "svelte-i18n"
 	import {getQueryUrl} from "$lib/helper/get-query-url.js";
+	$: _rc_tag = $page.query.get('rc_tag')
+	$: _rc_type = $page.query.get('rc_type')
+	$: rc_level = $page.query.get('rc_level')
+	$: rc_tag = ['big_class','small_class'].includes(_rc_tag) ? undefined : _rc_tag
+	$: rc_type = ['big_class','small_class'].includes(_rc_type) ? _rc_type.split('_')[0] : undefined
+	let page_num = 0
+	let show_load_more = true
+	let is_loading = false
+
+	$: {
+		if (rc_tag || rc_level || rc_type) {
+			classroom = []
+			page_num = 0
+			show_load_more = true
+			fetchData()
+		}
+	}
+
+	const fetchData = async () => {
+		is_loading = true
+		const {data, success} = await http.post(fetch, '/courseApi/list_registrable_classroom', {
+			rc_tag,
+			rc_level,
+			rc_type,
+			start_date: dayjs().add(page_num, 'week').format('YYYY-MM-DD 00:00:00'),
+			end_date: dayjs().add(page_num + 1, 'week').format('YYYY-MM-DD 00:00:00'),
+		})
+		is_loading = false
+		if (success) {
+			page_num += 1
+			classroom = [...classroom, ...data]
+			if (data.length === 0) show_load_more = false
+		}
+	}
+
+	const initLoadMore = node => {
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					fetchData()
+				}
+			});
+		});
+		observer.observe(node);
+		return {
+			destroy () {
+				observer.disconnect();
+			}
+		}
+	}
 
 	const get_url = (tag, lv) => {
 		const query = {
@@ -101,8 +128,23 @@
 			<LessonPreview item={c}/>
 			<div class="h-0.5 bg-gray-200"></div>
 		{/each}
+		{#if show_load_more}
+			{#if is_loading}
+				<div class="flex justify-center">
+					<Spinner/>
+				</div>
+			{:else}
+				<button use:initLoadMore></button>
+			{/if}
+		{/if}
 	{:else}
-		<p class="p-4 text-gray-400">No lessons found</p>
+		{#if is_loading}
+			<div class="flex justify-center">
+				<Spinner/>
+			</div>
+		{:else}
+			<p class="p-4 text-gray-400">No lessons found</p>
+		{/if}
 	{/if}
 </div>
 

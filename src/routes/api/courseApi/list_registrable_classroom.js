@@ -5,6 +5,8 @@ export const post = async (req) => {
 		rc_tag: req.body.rc_tag,
 		rc_type: req.body.rc_type,
 		tutor_id: req.body.tutor_id,
-		rc_level: req.body.rc_level
+		rc_level: req.body.rc_level,
+		start_date: req.body.start_date,
+		end_date: req.body.end_date,
 	})
 }
