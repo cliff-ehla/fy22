@@ -14,6 +14,7 @@
 <script>
 	import dayjs from "dayjs";
 	import Spinner from "$lib/ui/Spinner.svelte";
+	import {locale} from "svelte-i18n";
 	let classroom = []
 
 	let _tag_store
@@ -91,7 +92,7 @@
 	<p class="mb-2">{$_('teacher_for_big_small_class')}</p>
 	<div class="flex overflow-auto">
 		{#each $tutor_store as tutor}
-			<a href="tutor/{tutor.tutor_id}" class="w-16 sm:w-20 mr-2 sm:mr-4">
+			<a href="/{$locale}/zoom/tutor/{tutor.tutor_id}" class="w-16 sm:w-20 mr-2 sm:mr-4">
 				<div class="sm:w-20 sm:h-20 w-16 h-16 mx-auto rounded-full bg-cover bg-center" style="background-image: url({tutor.profile_pic})"></div>
 				<div class="mt-2 text-xs text-center leading-none">{tutor.display_name}</div>
 			</a>
