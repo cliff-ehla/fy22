@@ -52,7 +52,7 @@
 	<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 		{#each ad_list as item}
 			<div class="mb-4">
-				<a class="mb-2 block" href="one-on-one/{item.href}">
+				<a class="mb-2 block" href="/{$locale}/zoom/one-on-one/{item.href}">
 					<div class="relative overflow-hidden" style="padding-top: 56%">
 						<img class="absolute inset-0 rounded" src="https://ehla-media-bucket.s3.ap-southeast-1.amazonaws.com/website2021/one-on-one/{item.href}.jpg" alt={item.title_en}>
 					</div>
