@@ -13,7 +13,7 @@
 					<div>
 						<p class="font-bold mb-2">{v[`title_${$locale}`]}</p>
 						{#if v.link.startsWith('https')}
-							<video controls class="rounded " src={v.link}></video>
+							<video controls class="rounded w-full" src={v.link}></video>
 						{:else}
 							<div class="bg-black w-full rounded relative" style="padding-top: 56.25%">
 								<iframe src="https://www.youtube.com/embed/{v.link}"
