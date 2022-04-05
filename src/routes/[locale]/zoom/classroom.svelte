@@ -32,7 +32,7 @@
 	$: _rc_type = $page.query.get('rc_type')
 	$: rc_level = $page.query.get('rc_level')
 	$: rc_tag = ['big_class','small_class'].includes(_rc_tag) ? undefined : _rc_tag
-	$: rc_type = ['big_class','small_class'].includes(_rc_type) ? _rc_type.split('_')[0] : undefined
+	$: rc_type = ['big_class','small_class'].includes(_rc_tag) ? _rc_tag.split('_')[0] : undefined
 	let page_num = 0
 	let show_load_more = true
 	let is_loading = false
